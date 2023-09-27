@@ -1,0 +1,1054 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2023-09-27T14:57:01.452Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Front Page",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Subtitle\", \"Content\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2023-09-27T14:57:14.665Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "1",
+      "object_repr": "Category object (1)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2023-09-27T14:57:17.649Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "2",
+      "object_repr": "Category object (2)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2023-09-27T14:57:21.215Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "Category object (3)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2023-09-27T14:57:24.885Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "4",
+      "object_repr": "Category object (4)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2023-09-27T14:57:27.374Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "5",
+      "object_repr": "Category object (5)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2023-09-27T14:57:33.827Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "6",
+      "object_repr": "Category object (6)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2023-09-27T14:57:41.591Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "3",
+      "object_repr": "Category object (3)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Slug\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2023-09-27T20:32:36.417Z",
+      "user": 1,
+      "content_type": 9,
+      "object_id": "6",
+      "object_repr": "Staffing",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2023-09-27T20:33:56.655Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "Meta",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2023-09-27T20:34:15.243Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "X",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2023-09-27T20:34:54.585Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "3",
+      "object_repr": "ByteDance",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2023-09-27T20:35:45.075Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "4",
+      "object_repr": "Alphabet",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2023-09-27T20:36:30.534Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Facebook",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2023-09-27T20:37:08.262Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "Threads",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2023-09-27T20:37:23.332Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "3",
+      "object_repr": "Instagram",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2023-09-27T20:38:03.508Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "4",
+      "object_repr": "X (Twitter)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2023-09-27T20:38:30.809Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "5",
+      "object_repr": "TikTok",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2023-09-27T20:42:29.716Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "3597ee3e-172b-4e45-9b75-b81a9bdc7fed",
+      "object_repr": "Senate Committee on Rules and Administration publishes letter stating that Meta has only 20 percent of staff who previously worked on election-related issues. (Staffing)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"citation\", \"object\": \"https://www.klobuchar.senate.gov/public/index.cfm/news-releases?ID=7C2B2899-1DDA-45C1-889B-6C8EC3822475\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2023-09-27T20:43:58.634Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "94c0ead9-ffe4-4fde-880b-541142cb657e",
+      "object_repr": "Announces that they will begin allowing political advertising, citing freedom of expression. They will also create a global advertising transparency center that allows people to review political posts",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"citation\", \"object\": \"https://blog.twitter.com/en_us/topics/company/2023/supporting-peoples-right-to-accurate-and-safe-political-discourse-on-x\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2023-09-27T20:44:18.568Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "94c0ead9-ffe4-4fde-880b-541142cb657e",
+      "object_repr": "Announced that they will begin allowing political advertising, citing freedom of expression. They will also create a global advertising transparency center that allows people to review political posts",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Summary\"]}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 4,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add Front Page",
+      "content_type": 7,
+      "codename": "add_frontpage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change Front Page",
+      "content_type": 7,
+      "codename": "change_frontpage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete Front Page",
+      "content_type": 7,
+      "codename": "delete_frontpage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view Front Page",
+      "content_type": 7,
+      "codename": "view_frontpage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add Global Settings",
+      "content_type": 8,
+      "codename": "add_globalsettings"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change Global Settings",
+      "content_type": 8,
+      "codename": "change_globalsettings"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete Global Settings",
+      "content_type": 8,
+      "codename": "delete_globalsettings"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view Global Settings",
+      "content_type": 8,
+      "codename": "view_globalsettings"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add category",
+      "content_type": 9,
+      "codename": "add_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change category",
+      "content_type": 9,
+      "codename": "change_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete category",
+      "content_type": 9,
+      "codename": "delete_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view category",
+      "content_type": 9,
+      "codename": "view_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add firm",
+      "content_type": 10,
+      "codename": "add_firm"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change firm",
+      "content_type": 10,
+      "codename": "change_firm"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete firm",
+      "content_type": 10,
+      "codename": "delete_firm"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view firm",
+      "content_type": 10,
+      "codename": "view_firm"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add platform",
+      "content_type": 11,
+      "codename": "add_platform"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change platform",
+      "content_type": 11,
+      "codename": "change_platform"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete platform",
+      "content_type": 11,
+      "codename": "delete_platform"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view platform",
+      "content_type": 11,
+      "codename": "view_platform"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add record",
+      "content_type": 12,
+      "codename": "add_record"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change record",
+      "content_type": 12,
+      "codename": "change_record"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete record",
+      "content_type": 12,
+      "codename": "delete_record"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view record",
+      "content_type": 12,
+      "codename": "view_record"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add citation",
+      "content_type": 13,
+      "codename": "add_citation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change citation",
+      "content_type": 13,
+      "codename": "change_citation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete citation",
+      "content_type": 13,
+      "codename": "delete_citation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can view citation",
+      "content_type": 13,
+      "codename": "view_citation"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$c5A5iJ4p1RgreY6YdcyWjb$i3E0i7uIY7NfSUBZfZf1xxIrFY8zF6J/g1RC8WV95Co=",
+      "last_login": "2023-09-27T14:56:11.667Z",
+      "is_superuser": true,
+      "username": "steve",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-09-27T14:56:02.283Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "content",
+      "model": "frontpage"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "content",
+      "model": "globalsettings"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "tracker",
+      "model": "category"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "tracker",
+      "model": "firm"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "tracker",
+      "model": "platform"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "tracker",
+      "model": "record"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+      "app_label": "tracker",
+      "model": "citation"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "yxko8n3xofuv3rs05jy4qggke1nfjku1",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hAIAxSX7j0DmYFBqoYmpV013t026UK3773_NxFxXWpcO89xzOIqtLj8MsL04naI_MT2mGSa2jKPJI9EnrbL-5T5fTvbv4OKve5r8sqQdkCGMqAh9oV1sAN7CDakBAq8oyGDcYx-p8olVEWDy0Ury-LzBeNiN9M:1qlVxT:X2sxIg_OGZYtogD8FsX2C_05zqd-mUzafUdzeyQnFTg",
+      "expire_date": "2023-10-11T14:56:11.668Z"
+    }
+  },
+  {
+    "model": "content.frontpage",
+    "pk": 1,
+    "fields": {
+      "title": "A title",
+      "subtitle": "a subtiltle",
+      "content": "<p>Some html<br /><br /></p>\r\n<p>With <a href=\"https://www.wprdc.org\">links</a>!<br /><br /></p>\r\n<p>And lists!</p>\r\n<ul>\r\n<li>one</li>\r\n<li>two</li>\r\n<li>three</li>\r\n</ul>"
+    }
+  },
+  {
+    "model": "tracker.record",
+    "pk": "3597ee3e-172b-4e45-9b75-b81a9bdc7fed",
+    "fields": {
+      "summary": "Senate Committee on Rules and Administration publishes letter stating that Meta has only 20 percent of staff who previously worked on election-related issues.",
+      "date": "2023-06-01",
+      "category": 6,
+      "details": "<p>A letter from the Senate Committee on Rules and Administration states \"this month one report stated that Meta has only 20 percent of the number of staff who worked on election-related issues in 2020 - or 60 employees down from 300 - and that additional layoffs are planned.\"</p>",
+      "platform": 1
+    }
+  },
+  {
+    "model": "tracker.record",
+    "pk": "94c0ead9-ffe4-4fde-880b-541142cb657e",
+    "fields": {
+      "summary": "Announced that they will begin allowing political advertising, citing freedom of expression. They will also create a global advertising transparency center that allows people to review political posts being shown on X.",
+      "date": "2023-08-29",
+      "category": 4,
+      "details": "<p>The US specific policies re political advertising state that: Advertisers may not promote false or misleading content about how to participate in an election, &nbsp;dissuade people from participating in an election or intended to undermine public confidence in an election.<br />Only U.S. persons and entities can run political ads in the U.S. and must go through a pre-approval process in order to do so.</p>",
+      "platform": 4
+    }
+  },
+  {
+    "model": "tracker.firm",
+    "pk": 1,
+    "fields": {
+      "name": "Meta",
+      "slug": "meta",
+      "homepage": "https://about.meta.com/"
+    }
+  },
+  {
+    "model": "tracker.firm",
+    "pk": 2,
+    "fields": {
+      "name": "X",
+      "slug": "twitter",
+      "homepage": "http://x.com"
+    }
+  },
+  {
+    "model": "tracker.firm",
+    "pk": 3,
+    "fields": {
+      "name": "ByteDance",
+      "slug": "bytedance",
+      "homepage": "https://www.bytedance.com/en/"
+    }
+  },
+  {
+    "model": "tracker.firm",
+    "pk": 4,
+    "fields": {
+      "name": "Alphabet",
+      "slug": "alphabet",
+      "homepage": "https://abc.xyz/"
+    }
+  },
+  {
+    "model": "tracker.platform",
+    "pk": 1,
+    "fields": {
+      "name": "Facebook",
+      "slug": "facebook",
+      "homepage": "http://facebook.com",
+      "parent_firm": 1
+    }
+  },
+  {
+    "model": "tracker.platform",
+    "pk": 2,
+    "fields": {
+      "name": "Threads",
+      "slug": "threads",
+      "homepage": "https://www.threads.net/login",
+      "parent_firm": 1
+    }
+  },
+  {
+    "model": "tracker.platform",
+    "pk": 3,
+    "fields": {
+      "name": "Instagram",
+      "slug": "instagram",
+      "homepage": "https://www.instagram.com/",
+      "parent_firm": 1
+    }
+  },
+  {
+    "model": "tracker.platform",
+    "pk": 4,
+    "fields": {
+      "name": "X (Twitter)",
+      "slug": "twitter",
+      "homepage": "https://www.x.com",
+      "parent_firm": 2
+    }
+  },
+  {
+    "model": "tracker.platform",
+    "pk": 5,
+    "fields": {
+      "name": "TikTok",
+      "slug": "tiktok",
+      "homepage": "http://tiktok.com",
+      "parent_firm": 3
+    }
+  },
+  {
+    "model": "tracker.category",
+    "pk": 1,
+    "fields": {
+      "name": "Misinformation",
+      "slug": "misinformation"
+    }
+  },
+  {
+    "model": "tracker.category",
+    "pk": 2,
+    "fields": {
+      "name": "Election interference",
+      "slug": "election-interference"
+    }
+  },
+  {
+    "model": "tracker.category",
+    "pk": 3,
+    "fields": {
+      "name": "Event/Decision",
+      "slug": "event-decision"
+    }
+  },
+  {
+    "model": "tracker.category",
+    "pk": 4,
+    "fields": {
+      "name": "Political advertising",
+      "slug": "political-advertising"
+    }
+  },
+  {
+    "model": "tracker.category",
+    "pk": 5,
+    "fields": {
+      "name": "Election interference",
+      "slug": "election-interference"
+    }
+  },
+  {
+    "model": "tracker.category",
+    "pk": 6,
+    "fields": {
+      "name": "Staffing",
+      "slug": "staffing"
+    }
+  },
+  {
+    "model": "tracker.citation",
+    "pk": 1,
+    "fields": {
+      "url": "https://www.klobuchar.senate.gov/public/index.cfm/news-releases?ID=7C2B2899-1DDA-45C1-889B-6C8EC3822475",
+      "record": "3597ee3e-172b-4e45-9b75-b81a9bdc7fed"
+    }
+  },
+  {
+    "model": "tracker.citation",
+    "pk": 2,
+    "fields": {
+      "url": "https://blog.twitter.com/en_us/topics/company/2023/supporting-peoples-right-to-accurate-and-safe-political-discourse-on-x",
+      "record": "94c0ead9-ffe4-4fde-880b-541142cb657e"
+    }
+  }
+]
