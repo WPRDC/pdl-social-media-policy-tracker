@@ -1,20 +1,24 @@
 import uuid
 
+from colorfield.fields import ColorField
 from django.db import models
 from tinymce.models import HTMLField
 
 
 class Record(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    summary = models.CharField(max_length=320)
+    summary = models.CharField(max_length=256)
     date = models.DateField()
     category = models.ForeignKey("Category", on_delete=models.PROTECT)
-    details = HTMLField()
+    details = HTMLField(null=True, blank=True)
     platform = models.ForeignKey(
         "Platform",
         related_name="records",
         on_delete=models.PROTECT,
     )
+
+    class Meta:
+        ordering = ["-date"]
 
     def __str__(self):
         return f"{self.summary} ({self.category})"
@@ -22,7 +26,7 @@ class Record(models.Model):
 
 class Firm(models.Model):
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True)
     homepage = models.URLField()
 
     def __str__(self):
@@ -31,13 +35,15 @@ class Firm(models.Model):
 
 class Platform(models.Model):
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True)
     homepage = models.URLField()
     parent_firm = models.ForeignKey(
         "Firm",
         related_name="platforms",
         on_delete=models.PROTECT,
     )
+    background_color = ColorField()
+    text_color = ColorField()
 
     def __str__(self):
         return self.name
@@ -45,7 +51,8 @@ class Platform(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True)
+    color = ColorField()
 
     class Meta:
         verbose_name_plural = "Categories"
@@ -55,6 +62,7 @@ class Category(models.Model):
 
 
 class Citation(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     url = models.URLField()
     record = models.ForeignKey(
         "Record",

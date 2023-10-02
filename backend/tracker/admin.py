@@ -18,7 +18,7 @@ class PlatformAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ("name", "slug")
+    list_display = ("name", "slug", "color")
     prepopulated_fields = {"slug": ["name"]}
 
 
@@ -34,7 +34,7 @@ class CitationInline(admin.TabularInline):
 
 @admin.register(Record)
 class RecordAdmin(admin.ModelAdmin):
-    list_display = ("summary", "category")
+    list_display = ("summary", "category", "date", "platform")
     inlines = (CitationInline,)
 
     form = RecordForm

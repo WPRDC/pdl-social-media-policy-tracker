@@ -1,0 +1,3 @@
+.wrapper {
+  @apply absolute top-full z-30 mt-2 w-full rounded-md border border-gray-300 bg-white shadow-lg;
+}

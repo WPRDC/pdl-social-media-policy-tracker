@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "solo",
     "tinymce",
+    "colorfield",
     # project apps
     "content",
     "tracker",
@@ -138,4 +139,21 @@ TINYMCE_DEFAULT_CONFIG = {
                     insertdatetime,media,table,paste,code,help,wordcount""",
     "toolbar": """undo redo | formatselect | bold italic | link image | alignleft aligncenter 
                     | alignright alignjustify | bullist numlist outdent indent | removeformat | help""",
+}
+
+REST_FRAMEWORK = {
+    "DEFAULT_RENDERER_CLASSES": (
+        "djangorestframework_camel_case.render.CamelCaseJSONRenderer",
+        "djangorestframework_camel_case.render.CamelCaseBrowsableAPIRenderer",
+    ),
+    "DEFAULT_PARSER_CLASSES": (
+        "djangorestframework_camel_case.parser.CamelCaseFormParser",
+        "djangorestframework_camel_case.parser.CamelCaseMultiPartParser",
+        "djangorestframework_camel_case.parser.CamelCaseJSONParser",
+    ),
+    "JSON_UNDERSCOREIZE": {
+        "no_underscore_before_number": True,
+    },
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 100,
 }

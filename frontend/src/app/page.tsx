@@ -1,9 +1,12 @@
-import Image from 'next/image'
+import { requestTimeline, requestTrackerRecords } from "@/lib/api";
+import { Timeline } from "@/components/Timeline/Timeline";
 
-export default function Home() {
+export default async function Home() {
+  const timeline = await requestTimeline();
+
   return (
-    <main>
-      <h1>Home Page</h1>
+    <main className="my-12">
+      <Timeline timeline={timeline} />
     </main>
-  )
+  );
 }
