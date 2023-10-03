@@ -10,6 +10,7 @@ const DEFAULT_HEADERS: HeadersInit = {
 
 const DEFAULT_FETCH_OPTIONS: RequestInit = {
   credentials: "include",
+  cache: 'no-store',
 };
 
 function getEndpointURL(endpoint: Endpoint, queryParams: object) {
