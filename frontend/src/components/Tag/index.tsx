@@ -6,7 +6,7 @@ export interface TagProps {
 
 export function Tag({ label, color }: TagProps) {
   return (
-    <div className="" style={{ background: color }}>
+    <div className="font-medium" style={{ background: color }}>
       {label}
     </div>
   );

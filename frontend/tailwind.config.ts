@@ -21,6 +21,7 @@ const config: Config = {
         cooper: ["var(--cooper-hewitt)", "Arial", "sans-serif"],
       },
       boxShadow: {
+        "sm-rev": "-2px -2px 0 #4b5563",
         DEFAULT: "8px 8px 0 #4b5563",
       },
       colors: {

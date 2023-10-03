@@ -1,4 +1,4 @@
-import { requestTimeline, requestTrackerRecords } from "@/lib/api";
+import { requestTimeline } from "@/lib/api";
 import { Timeline } from "@/components/Timeline/Timeline";
 
 export default async function Home() {

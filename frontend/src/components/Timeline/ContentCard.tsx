@@ -31,7 +31,7 @@ export function ContentCard({ record }: ContentCardProps): ReactElement {
             <div className="flex-grow">{platform?.name}</div>
             <div
               aria-label="category"
-              className="w-fit rounded border border-slate-600 px-1 font-rubik text-sm font-bold uppercase text-black"
+              className="w-fit rounded border border-slate-800 px-1 font-rubik text-xs items-center flex font-medium uppercase text-black"
               style={{ backgroundColor: category?.color }}
             >
               {category?.name}
