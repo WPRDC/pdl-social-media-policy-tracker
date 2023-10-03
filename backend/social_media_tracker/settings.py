@@ -33,6 +33,7 @@ ALLOWED_HOSTS = json.loads(
     ),
 )
 
+CSRF_TRUSTED_ORIGINS = json.loads(os.environ.get("CSRF_TRUSTED_ORIGINS", "[]"))
 
 # Application definition
 
