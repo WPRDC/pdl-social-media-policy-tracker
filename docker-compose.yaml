@@ -1,0 +1,70 @@
+services:
+  # memcached
+  cache:
+    image: memcached:alpine
+    ports:
+      - "${CACHE_PORT}:11211"
+    networks:
+      main:
+        aliases:
+          - cache
+
+  # postgres db
+  db:
+    image: postgres:alpine
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - "${DB_PORT}:5432"
+    networks:
+      main:
+        aliases:
+          - db
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+
+  # django rest api
+  api:
+    build:
+      context: ./backend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - type: bind
+        source: ./backend
+        target: /code
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+    env_file: backend/.env.dev
+    ports:
+      - "${API_PORT}:8000"
+    restart: always
+    networks:
+      main:
+        aliases:
+          - api
+    depends_on:
+      - db
+      - cache
+
+  # next.js
+  frontend:
+    build:
+      context: ./frontend
+      network: host
+    ports:
+      - "${FRONTEND_PORT}:3000"
+    env_file: frontend/.env.local
+    networks:
+      main:
+        aliases:
+          - frontend
+    depends_on:
+      - api
+
+networks:
+  main:

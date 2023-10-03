@@ -63,9 +63,8 @@ export const excerptReplacer: ReplacerRecord = {
   br: () => <></>,
 };
 
-const HEADING_TAGS = ["h1", "h2", "h3", "h4", "h5", "h6"];
-
 export const makeReplacer =
+  // eslint-disable-next-line react/display-name
   (replacers: ReplacerRecord) => (domNode: DOMNode) => {
     if (domNode instanceof Element) {
       const ReplacedElement =

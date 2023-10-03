@@ -12,7 +12,7 @@ class FirmAdmin(admin.ModelAdmin):
 
 @admin.register(Platform)
 class PlatformAdmin(admin.ModelAdmin):
-    list_display = ("name", "slug")
+    list_display = ("name", "slug", "background_color", "text_color")
     prepopulated_fields = {"slug": ["name"]}
 
 
