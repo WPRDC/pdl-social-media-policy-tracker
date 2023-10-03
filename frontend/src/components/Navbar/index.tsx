@@ -4,6 +4,8 @@ import Image from "next/image";
 import React, { ReactElement } from "react";
 import NavMenu from "./NavMenu";
 
+import logo from './pitt_logo.png'
+
 export default function Navbar(): ReactElement {
   return (
     <div className="w-full bg-royal bg-navbar-texture bg-cover shadow-lg">
@@ -11,10 +13,9 @@ export default function Navbar(): ReactElement {
         <div className="flex h-20 items-center space-x-4">
           <div className="pr-4 text-left">
             <Image
-              src={"/pitt_logo.png"}
+              src={logo}
               alt="University of Pittsburgh"
-              width={148}
-              height={46}
+              height={48}
             />
           </div>
           <div className="h-10 border-r border-grey"></div>
