@@ -51,11 +51,13 @@ export function Timeline({ timeline, platforms, categories }: TimelineProps) {
   return (
     <div className="w-full max-w-screen-lg md:mx-auto">
       <FilterControl
+        label="Filter by Platform"
         selected={selectedPlatforms}
         collection={platforms}
         onChange={handleFilterChange("platforms")}
       />
       <FilterControl
+        label="Filter by Category"
         selected={selectedCategories}
         collection={categories}
         onChange={handleFilterChange("categories")}
@@ -77,16 +79,22 @@ export function Timeline({ timeline, platforms, categories }: TimelineProps) {
 }
 
 interface FilterControlProps {
+  label: string;
   selected: Set<string>;
   collection: Named[];
   onChange: (selection: string[]) => void;
 }
 
-function FilterControl({ selected, collection, onChange }: FilterControlProps) {
+function FilterControl({
+  label,
+  selected,
+  collection,
+  onChange,
+}: FilterControlProps) {
   return (
     <div>
       <MultiSelect
-        label="Filter Platforms"
+        label={label}
         value={Array.from(selected)}
         onChange={onChange}
       >
