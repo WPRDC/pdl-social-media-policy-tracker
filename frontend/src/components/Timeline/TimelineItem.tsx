@@ -14,12 +14,12 @@ export interface TimelineItemProps {
 
 export function TimelineItem({ date, records, position }: TimelineItemProps) {
   return (
-    <div className="flex w-full items-stretch pl-4 pr-3 md:pr-8 lg:pr-12">
+    <div className="flex w-full items-stretch px-1">
       <DateMarker date={date} position={position} />
       <TimePointMarker position={position} />
       <div
         className={classNames(
-          "w-full border-slate-800 py-4",
+          "w-full border-slate-400 py-4",
           position !== "start" && "border-t",
         )}
       >

@@ -3,9 +3,9 @@ import {
   requestPlatforms,
   requestTimeline,
 } from "@/lib/api";
-import { Timeline } from "@/components/Timeline";
+import { Timeline } from "@/components/SplitTimeline";
 
-export default async function TimelineRoute() {
+export default async function CompareRoute() {
   const timeline = await requestTimeline();
   const platforms = await requestPlatforms();
   const categories = await requestCategories();

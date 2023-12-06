@@ -10,7 +10,7 @@ const DEFAULT_HEADERS: HeadersInit = {
 
 const DEFAULT_FETCH_OPTIONS: RequestInit = {
   credentials: "include",
-  cache: 'no-store',
+  cache: "no-store",
 };
 
 function getEndpointURL(endpoint: Endpoint, queryParams: object) {
@@ -77,12 +77,13 @@ export function requestSingleton<T extends object>(
   return fetchAPI<T>(endpoint, id, queryParams, options) as Promise<T>;
 }
 
-export function requestList<T extends object>(
+export async function requestList<T extends object>(
   endpoint: Endpoint,
   queryParams: object = {},
   options: RequestInit = {},
 ) {
-  return fetchAPI<T>(endpoint, undefined, queryParams, options);
+  const response = await fetchAPI<T>(endpoint, undefined, queryParams, options);
+  return response.results;
 }
 
 export function requestFunction<T extends object>(

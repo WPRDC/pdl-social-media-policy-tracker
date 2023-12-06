@@ -1,5 +1,6 @@
 "use client";
 
+import { Key, useState } from "react";
 import {
   Category,
   Named,
@@ -7,14 +8,12 @@ import {
   Timeline,
   TrackerRecord,
 } from "@/types/model";
-import { TimelineItem } from "@/components/Timeline/TimelineItem";
-import { Dispatch, SetStateAction, useState } from "react";
-import { MultiComboBox } from "@/components/Pickers/MultiCombobox";
-
 import { Set } from "immutable";
-import { Endpoint } from "@/types/api";
+
 import { MultiSelect } from "@/components/MultiSelect";
 import { SelectionItem } from "@/components/MultiSelect/SelectionItem";
+
+import { TimelineItem } from "./TimelineItem";
 
 export interface TimelineProps {
   timeline: Timeline;
@@ -24,9 +23,9 @@ export interface TimelineProps {
 }
 
 export function Timeline({ timeline, platforms, categories }: TimelineProps) {
-  const [selectedPlatforms, setSelectedPlatforms] = useState<Set<string>>(
-    Set(platforms.map((p) => p.slug)),
-  );
+  const [leftPlatform, setLeftPlatform] = useState<Platform>(platforms[0]);
+  const [rightPlatform, setRightPlatform] = useState<Platform>(platforms[1]);
+
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
     Set(categories.map((c) => c.slug)),
   );
@@ -34,46 +33,68 @@ export function Timeline({ timeline, platforms, categories }: TimelineProps) {
   const handleFilterChange =
     (mode: "platforms" | "categories") => (value: string[]) => {
       if (!value.length) return;
-      if (mode === "platforms")
-        setSelectedPlatforms(
-          Set(toSlugArray(platforms.filter((p) => value.includes(p.slug)))),
-        );
       if (mode === "categories")
         setSelectedCategories(
           Set(toSlugArray(categories.filter((c) => value.includes(c.slug)))),
         );
     };
 
+  function getPlatformBySlug(slug: string) {
+    return platforms.find((p) => p.slug === slug);
+  }
+
+  const handlePlatformSelection = (side: "left" | "right") => (slug: Key) => {
+    // update current column
+    if (typeof slug === "string") {
+      if (side === "left") {
+        setLeftPlatform(getPlatformBySlug(slug) ?? platforms[0]);
+      } else if (side === "right") {
+        setRightPlatform(getPlatformBySlug(slug) ?? platforms[1]);
+      }
+    } else {
+      throw TypeError("Form selection key must be a string");
+    }
+  };
+
   function filterRecords(records: TrackerRecord[]) {
     return records
-      .filter((r) => selectedPlatforms.has(r.platform.slug))
-      .filter((r) => selectedCategories.has(r.category.slug));
+      .filter((r) => selectedCategories.has(r.category.slug))
+      .filter((r) =>
+        [leftPlatform.slug, rightPlatform.slug].includes(r.platform.slug),
+      );
   }
 
   return (
-    <div className="w-full max-w-screen-lg md:mx-auto">
-      <FilterControl
-        selected={selectedPlatforms}
-        collection={platforms}
-        onChange={handleFilterChange("platforms")}
-      />
-      <FilterControl
-        selected={selectedCategories}
-        collection={categories}
-        onChange={handleFilterChange("categories")}
-      />
+    <div className="w-full">
+      {/*<FilterControl*/}
+      {/*  selected={selectedCategories}*/}
+      {/*  collection={categories}*/}
+      {/*  onChange={handleFilterChange("categories")}*/}
+      {/*/>*/}
 
-      <TimelineItem position="start" />
+      <TimelineItem
+        position="start"
+        platforms={platforms}
+        onPlatformSelect={handlePlatformSelection}
+        leftPlatform={leftPlatform}
+        rightPlatform={rightPlatform}
+      />
 
       {Object.entries(timeline).map(([date, records]) => {
         const filteredRecords = filterRecords(records);
         if (!!filteredRecords && !!filteredRecords.length)
           return (
-            <TimelineItem key={date} date={date} records={filteredRecords} />
+            <TimelineItem
+              key={date}
+              date={date}
+              records={filteredRecords}
+              platforms={platforms}
+              leftPlatform={leftPlatform}
+              rightPlatform={rightPlatform}
+              onPlatformSelect={handlePlatformSelection}
+            />
           );
       })}
-
-      <TimelineItem position="end" />
     </div>
   );
 }

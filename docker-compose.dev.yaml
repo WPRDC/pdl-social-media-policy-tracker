@@ -51,18 +51,5 @@ services:
       - db
       - cache
 
-  # next.js
-  frontend:
-    build: ./frontend
-    ports:
-      - "${FRONTEND_PORT}:3000"
-    env_file: frontend/.env.local
-    networks:
-      main:
-        aliases:
-          - frontend
-    depends_on:
-      - api
-
 networks:
   main:

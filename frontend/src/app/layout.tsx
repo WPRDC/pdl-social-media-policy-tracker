@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { jetbrainsMono, openSans, cooper, rubik } from "@/lib/fonts";
 import Navbar from "@/components/Navbar";
+import { SSRProvider } from "@/components/client-components";
 
 export const metadata: Metadata = {
   title: "Social Media Policy Tracker - Pitt Cyber ",
@@ -14,13 +15,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${jetbrainsMono.variable} ${openSans.variable}  ${cooper.variable} ${rubik.variable} flex min-h-screen flex-col bg-white`}
-      >
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <SSRProvider>
+      <html lang="en">
+        <body
+          className={`${jetbrainsMono.variable} ${openSans.variable}  ${cooper.variable} ${rubik.variable} flex min-h-screen flex-col bg-white`}
+        >
+          <Navbar />
+          {children}
+        </body>
+      </html>
+    </SSRProvider>
   );
 }

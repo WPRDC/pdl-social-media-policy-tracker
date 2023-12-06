@@ -7,10 +7,12 @@ from tinymce.models import HTMLField
 
 class Record(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+
     summary = models.CharField(max_length=256)
-    date = models.DateField()
-    category = models.ForeignKey("Category", on_delete=models.PROTECT)
     details = HTMLField(null=True, blank=True)
+    date = models.DateField()
+
+    category = models.ForeignKey("Category", related_name="records", on_delete=models.PROTECT)
     platform = models.ForeignKey(
         "Platform",
         related_name="records",

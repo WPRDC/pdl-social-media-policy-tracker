@@ -1,37 +1,39 @@
-import * as React from 'react';
-import { useOverlay, DismissButton, FocusScope } from 'react-aria';
-import styles from './Popover.module.css';
-interface PopoverProps {
-  popoverRef?: React.RefObject<HTMLDivElement>;
+import type { OverlayTriggerState } from "react-stately";
+import type { AriaPopoverProps } from "@react-aria/overlays";
+import * as React from "react";
+import { usePopover, DismissButton, Overlay } from "@react-aria/overlays";
+
+interface PopoverProps extends Omit<AriaPopoverProps, "popoverRef"> {
   children: React.ReactNode;
-  isOpen?: boolean;
-  onClose?: () => void;
+  state: OverlayTriggerState;
+  className?: string;
+  popoverRef?: React.RefObject<HTMLDivElement>;
 }
 
 export function Popover(props: PopoverProps) {
   let ref = React.useRef<HTMLDivElement>(null);
-  let { popoverRef = ref, isOpen, onClose = () => {}, children } = props;
+  let { popoverRef = ref, state, children, className, isNonModal } = props;
 
-  // Handle events that should cause the popup to close,
-  // e.g. blur, clicking outside, or pressing the escape key.
-  let { overlayProps } = useOverlay(
+  let { popoverProps, underlayProps } = usePopover(
     {
-      isOpen,
-      onClose,
-      shouldCloseOnBlur: true,
-      isDismissable: false,
+      ...props,
+      popoverRef,
     },
-    popoverRef,
+    state,
   );
 
-  // Add a hidden <DismissButton> component at the end of the popover
-  // to allow screen reader users to dismiss the popup easily.
   return (
-    <FocusScope restoreFocus>
-      <div {...overlayProps} ref={popoverRef} className={styles.wrapper}>
+    <Overlay>
+      {!isNonModal && <div {...underlayProps} className="fixed inset-0" />}
+      <div
+        {...popoverProps}
+        ref={popoverRef}
+        className={`z-10 mt-2 rounded-md border border-gray-300 bg-white shadow-lg ${className}`}
+      >
+        {!isNonModal && <DismissButton onDismiss={state.close} />}
         {children}
-        <DismissButton onDismiss={onClose} />
+        <DismissButton onDismiss={state.close} />
       </div>
-    </FocusScope>
+    </Overlay>
   );
 }
