@@ -71,14 +71,18 @@ export const makeReplacer =
         replacers[domNode.name as keyof IntrinsicElements];
       if (!!ReplacedElement) {
         return (
-          <ReplacedElement {...domNode}>{domNode.children}</ReplacedElement>
+          <ReplacedElement {...domNode}>
+            {domNode.children as DOMNode[]}
+          </ReplacedElement>
         );
       } else {
         const Tag = domNode.name as keyof IntrinsicElements;
         const { style, ...props } = attributesToProps(domNode.attribs);
         return (
           <Tag {...props}>
-            {domToReact(domNode.children, { replace: makeReplacer(replacers) })}
+            {domToReact(domNode.children as DOMNode[], {
+              replace: makeReplacer(replacers),
+            })}
           </Tag>
         );
       }

@@ -4,11 +4,11 @@ import * as React from "react";
 import type { AriaSelectProps } from "@react-types/select";
 import { useSelectState } from "react-stately";
 import {
-  useSelect,
   HiddenSelect,
-  useButton,
   mergeProps,
+  useButton,
   useFocusRing,
+  useSelect,
 } from "react-aria";
 import { HiChevronDoubleDown } from "react-icons/hi";
 

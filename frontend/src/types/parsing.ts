@@ -2,9 +2,10 @@ import { DOMNode, Element } from "html-react-parser";
 import { JSX } from "react/jsx-runtime";
 
 export interface ParserProps
-  extends Pick<Element, "name" | "attribs" | "type" | "children"> {
+  extends Pick<Element, "name" | "attribs" | "type"> {
   className?: string;
   replacer?: ReplaceFn;
+  children: DOMNode[];
 }
 
 export type ReplaceFn = (node: DOMNode) => JSX.Element | undefined;

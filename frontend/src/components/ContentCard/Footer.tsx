@@ -1,5 +1,4 @@
-import classNames from "classnames";
-import { Category, Platform, TrackerRecord } from "@/types/model";
+import { TrackerRecord } from "@/types/model";
 
 export interface FooterProps extends TrackerRecord {}
 

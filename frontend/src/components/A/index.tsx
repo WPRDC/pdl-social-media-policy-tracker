@@ -1,6 +1,5 @@
 import React, { PropsWithChildren } from "react";
 import Link, { LinkProps } from "next/link";
-import classNames from "classnames";
 import { UrlObject } from "url";
 import { HiExternalLink } from "react-icons/hi";
 

@@ -1,7 +1,5 @@
-import classNames from "classnames";
-import { Category, Platform, TrackerRecord } from "@/types/model";
+import { TrackerRecord } from "@/types/model";
 import Link from "next/link";
-import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { ParsedHTML } from "@/components/ParsedHTML";
 import { ReactNode, useState } from "react";
 

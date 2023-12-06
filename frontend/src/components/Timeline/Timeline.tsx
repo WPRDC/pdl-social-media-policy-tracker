@@ -8,11 +8,9 @@ import {
   TrackerRecord,
 } from "@/types/model";
 import { TimelineItem } from "@/components/Timeline/TimelineItem";
-import { Dispatch, SetStateAction, useState } from "react";
-import { MultiComboBox } from "@/components/Pickers/MultiCombobox";
+import { useState } from "react";
 
 import { Set } from "immutable";
-import { Endpoint } from "@/types/api";
 import { MultiSelect } from "@/components/MultiSelect";
 import { SelectionItem } from "@/components/MultiSelect/SelectionItem";
 

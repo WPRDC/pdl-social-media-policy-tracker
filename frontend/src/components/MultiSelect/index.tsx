@@ -1,9 +1,8 @@
 import { useCheckboxGroupState } from "react-stately";
-import { useCheckboxGroup, useCheckboxGroupItem } from "react-aria";
+import { useCheckboxGroup } from "react-aria";
 import { CheckboxGroupContext } from "./util";
 import { CheckboxGroupProps, CheckboxProps } from "@react-types/checkbox";
 import { ReactElement } from "react";
-import classNames from "classnames";
 
 export interface MultiSelectProps extends CheckboxGroupProps {
   children: ReactElement<CheckboxProps> | ReactElement<CheckboxProps>[];

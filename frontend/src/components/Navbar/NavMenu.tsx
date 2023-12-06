@@ -1,6 +1,4 @@
-import styles from "./Navbar.module.css";
 import Link from "next/link";
-import classNames from "classnames";
 import React, { ReactElement, ReactNode } from "react";
 
 export default function NavMenu(): ReactElement {

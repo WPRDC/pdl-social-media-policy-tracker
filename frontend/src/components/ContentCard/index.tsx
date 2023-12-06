@@ -1,12 +1,7 @@
 "use client";
 
 import { TrackerRecord } from "@/types/model";
-import { ReactElement, useState } from "react";
-import { ParsedHTML } from "@/components/ParsedHTML";
-import Link from "next/link";
-import { BiChevronDown, BiChevronUp } from "react-icons/bi";
-import classNames from "classnames";
-import { Heading } from "@/components/ContentCard/Heading";
+import { ReactElement } from "react";
 import { Body } from "@/components/ContentCard/Body";
 import { Footer } from "./Footer";
 

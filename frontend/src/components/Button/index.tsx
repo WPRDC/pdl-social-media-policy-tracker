@@ -1,5 +1,5 @@
-import { AriaButtonProps, useButton } from 'react-aria';
-import { RefObject, useRef } from 'react';
+import { AriaButtonProps, useButton } from "react-aria";
+import { RefObject, useRef } from "react";
 
 interface ButtonProps extends AriaButtonProps {
   className?: string;

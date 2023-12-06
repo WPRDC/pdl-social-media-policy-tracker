@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { jetbrainsMono, openSans, cooper, rubik } from "@/lib/fonts";
+import { cooper, jetbrainsMono, openSans, rubik } from "@/lib/fonts";
 import Navbar from "@/components/Navbar";
 import { SSRProvider } from "@/components/client-components";
 

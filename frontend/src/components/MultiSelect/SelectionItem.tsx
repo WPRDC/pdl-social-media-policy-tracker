@@ -1,19 +1,10 @@
 "use client";
-import {
-  AriaCheckboxProps,
-  mergeProps,
-  useCheckboxGroupItem,
-  useFocusRing,
-} from "react-aria";
-import {
-  AriaCheckboxGroupItemProps,
-  CheckboxProps,
-} from "@react-types/checkbox";
+import { mergeProps, useCheckboxGroupItem, useFocusRing } from "react-aria";
+import { AriaCheckboxGroupItemProps } from "@react-types/checkbox";
 import { useContext, useRef } from "react";
 import { CheckboxGroupContext } from "./util";
 import { CheckboxGroupState } from "@react-stately/checkbox";
 import classNames from "classnames";
-import { ImCheckmark } from "react-icons/im";
 
 export interface SelectionItemProps extends AriaCheckboxGroupItemProps {}
 
