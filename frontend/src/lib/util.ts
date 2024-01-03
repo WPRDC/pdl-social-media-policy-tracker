@@ -7,3 +7,5 @@ export function getCookie(name: string): string {
   }
   return "";
 }
+
+export const MAX_PLATFORMS = 4;

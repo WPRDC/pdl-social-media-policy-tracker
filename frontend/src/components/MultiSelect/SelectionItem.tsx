@@ -5,6 +5,7 @@ import { useContext, useRef } from "react";
 import { CheckboxGroupContext } from "./util";
 import { CheckboxGroupState } from "@react-stately/checkbox";
 import classNames from "classnames";
+import { BiCheck, BiX } from "react-icons/bi";
 
 export interface SelectionItemProps extends AriaCheckboxGroupItemProps {}
 
@@ -49,7 +50,16 @@ export function SelectionItem(props: SelectionItemProps) {
           className="sr-only"
           disabled={isDisabled}
         />
-        {children}
+        <div className="flex items-center space-x-1">
+          <div>
+            {isSelected ? (
+              <BiCheck className="h-4 w-4" />
+            ) : (
+              <BiX className="h-4 w-4" />
+            )}
+          </div>
+          <div>{children}</div>
+        </div>
       </label>
     </div>
   );

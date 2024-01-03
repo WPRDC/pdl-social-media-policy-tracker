@@ -8,7 +8,7 @@ import logo from "./pitt_logo.png";
 
 export default function Navbar(): ReactElement {
   return (
-    <div className="w-full bg-royal bg-navbar-texture bg-cover shadow-lg">
+    <div className="w-full bg-royal bg-navbar-texture bg-cover">
       <div className="mx-auto max-w-screen-xl flex-none p-2">
         <div className="flex h-20 items-center space-x-4">
           <div className="pr-4 text-left">

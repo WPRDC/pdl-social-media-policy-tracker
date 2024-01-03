@@ -1,23 +1,11 @@
-import {
-  requestCategories,
-  requestPlatforms,
-  requestTimeline,
-} from "@/lib/api";
-import { Timeline } from "@/components/Timeline";
-
-export default async function TimelineRoute() {
-  const timeline = await requestTimeline();
-  const platforms = await requestPlatforms();
-  const categories = await requestCategories();
-
+export default async function About() {
   return (
     <main className="my-6">
-      <div id="timelines" className="flex space-x-2">
-        <Timeline
-          timeline={timeline}
-          platforms={platforms}
-          categories={categories}
-        />
+      <div className="mx-auto max-w-screen-lg">
+        <h1 className="mb-4 font-rubik text-5xl font-bold">
+          Title of this project
+        </h1>
+        <p>Content tbd</p>
       </div>
     </main>
   );
