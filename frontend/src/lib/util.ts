@@ -8,4 +8,8 @@ export function getCookie(name: string): string {
   return "";
 }
 
-export const MAX_PLATFORMS = 4;
+export const MAX_PLATFORMS = 3;
+
+// template string pass-through function to signal prettier to format strings
+export const tw = (strings: ArrayLike<string>, ...values: string[]) =>
+  String.raw({ raw: strings }, ...values);

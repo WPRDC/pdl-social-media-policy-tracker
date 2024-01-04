@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   @apply font-sans;
+}
+
+body a {
+  @apply font-sans font-semibold text-royal underline underline-offset-2 hover:text-pittblue hover:decoration-2;
 }

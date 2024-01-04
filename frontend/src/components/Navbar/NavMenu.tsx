@@ -4,14 +4,26 @@ import React, { ReactElement, ReactNode } from "react";
 export default function NavMenu(): ReactElement {
   const menuList: ReactNode = (
     <ul className="flex w-full">
-      <li className="border-r border-gray-400 px-5 py-4 font-sans text-sm font-semibold uppercase text-gold">
-        <Link href={"/"}>About</Link>
+      <li className="px-5 py-4 font-sans text-sm font-semibold uppercase text-gold">
+        <Link className="text-gold no-underline hover:text-white" href={"/"}>
+          About
+        </Link>
       </li>
-      <li className="border-r border-gray-400 px-5 py-4 font-sans text-sm font-semibold uppercase text-gold">
-        <Link href={"/timeline"}>Full Timeline</Link>
+      <li className="px-5 py-4 font-sans text-sm font-semibold uppercase text-gold">
+        <Link
+          className="text-gold no-underline hover:text-white"
+          href={"/timeline"}
+        >
+          Full Timeline
+        </Link>
       </li>
-      <li className="border-r border-gray-400 px-5 py-4 font-sans text-sm font-semibold uppercase text-gold">
-        <Link href={"/compare"}>Comparison Timeline</Link>
+      <li className="px-5 py-4 font-sans text-sm font-semibold uppercase text-gold">
+        <Link
+          className="text-gold no-underline hover:text-white"
+          href={"/compare"}
+        >
+          Comparison Timeline
+        </Link>
       </li>
       <div className="flex-grow" />
     </ul>

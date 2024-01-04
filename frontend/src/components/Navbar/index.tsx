@@ -15,8 +15,13 @@ export default function Navbar(): ReactElement {
             <Image src={logo} alt="University of Pittsburgh" height={48} />
           </div>
           <div className="h-10 border-r border-grey"></div>
-          <div className="font-cooper text-2xl font-semibold text-white">
-            <Link href={"/"}>Social Media Election Policy Tracker</Link>
+          <div>
+            <Link
+              className="font-cooper text-2xl font-semibold text-white no-underline hover:text-white"
+              href={"/"}
+            >
+              Social Media Election Policy Tracker
+            </Link>
           </div>
         </div>
         <div className="flex-grow" />
