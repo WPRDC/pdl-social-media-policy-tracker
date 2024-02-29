@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: '/social-media-election-policies',
   output: 'standalone',
   images: {
     remotePatterns: [

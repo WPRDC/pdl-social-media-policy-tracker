@@ -34,6 +34,9 @@ services:
       - type: bind
         source: ./backend
         target: /code
+      - type: bind
+        source: /tracker-static
+        target: /code/static
     environment:
       - DB_HOST=${DB_HOST}
       - DB_NAME=${DB_NAME}
