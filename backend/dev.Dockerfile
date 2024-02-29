@@ -6,8 +6,6 @@ ENV DEBUG=1
 RUN mkdir /code
 WORKDIR /code
 
-
-
 RUN apt-get update
 RUN apt-get install binutils libproj-dev gdal-bin -y
 
