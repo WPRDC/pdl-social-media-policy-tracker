@@ -13,7 +13,7 @@ export default async function Navbar(): Promise<ReactElement> {
   return (
     <div className="relative w-full bg-royal bg-navbar-texture bg-cover">
       <div className="mx-auto max-w-screen-xl flex-none p-2">
-        <div className="my-2 items-end md:my-4 md:flex md:space-x-4">
+        <div className="my-2 items-center md:my-4 md:flex md:space-x-4">
           <div className="pr-4 text-left">
             <a href="https://cyber.pitt.edu">
               <Image src={logo} alt="University of Pittsburgh" height={48} />
@@ -26,10 +26,12 @@ export default async function Navbar(): Promise<ReactElement> {
             className="mt-4 flex flex-col justify-between font-cooper text-2xl font-semibold leading-none text-white no-underline hover:text-white md:mt-0 md:h-12"
             href={"/"}
           >
-            <div className="text-sm">
+            <div className="pb-2 text-sm leading-none md:pb-0">
               Institute for Cyber Law, Policy, and Security
             </div>
-            <div>Social Media Election Policy Tracker</div>
+            <div className="align-baseline leading-none">
+              Social Media Election Policy Tracker
+            </div>
           </Link>
         </div>
         <div className="flex-grow" />
