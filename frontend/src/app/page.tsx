@@ -83,7 +83,7 @@ export default async function About() {
                 midterm election cycle, researchers and media have raised{" "}
                 <a href="https://www.washingtonpost.com/technology/2023/08/25/political-conspiracies-facebook-youtube-elon-musk/">
                   concerns
-                </a>
+                </a>{" "}
                 that social media companies are{" "}
                 <a href="https://www.washingtonpost.com/technology/2023/08/25/political-conspiracies-facebook-youtube-elon-musk/">
                   stepping back
