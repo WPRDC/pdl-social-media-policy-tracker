@@ -5,7 +5,15 @@ from django.db import models
 from tinymce.models import HTMLField
 
 
-class Record(models.Model):
+class TimeStamped(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
+
+class Record(TimeStamped):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
     summary = models.CharField(max_length=256)
@@ -26,7 +34,7 @@ class Record(models.Model):
         return f"{self.summary} ({self.category})"
 
 
-class Firm(models.Model):
+class Firm(TimeStamped):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
     homepage = models.URLField()
@@ -35,7 +43,7 @@ class Firm(models.Model):
         return self.name
 
 
-class Platform(models.Model):
+class Platform(TimeStamped):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
     homepage = models.URLField()
@@ -51,7 +59,7 @@ class Platform(models.Model):
         return self.name
 
 
-class Category(models.Model):
+class Category(TimeStamped):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
     color = ColorField()
@@ -63,7 +71,7 @@ class Category(models.Model):
         return self.name
 
 
-class Citation(models.Model):
+class Citation(TimeStamped):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     url = models.URLField()
     record = models.ForeignKey(
