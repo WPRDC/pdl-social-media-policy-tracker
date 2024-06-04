@@ -11,8 +11,10 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "navbar-texture": "url('/bg_header.png')",
-        "footer-texture": "url('/bg_footer.png')",
+        "navbar-texture":
+          "url('/social-media-election-policies/bg_header.png')",
+        "footer-texture":
+          "url('/social-media-election-policies/bg_footer.png')",
       },
       fontFamily: {
         sans: ["var(--font-open-sans)", "Arial", "sans-serif"],

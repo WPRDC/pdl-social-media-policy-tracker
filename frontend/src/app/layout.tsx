@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import { SSRProvider } from "@/components/client-components";
 
 export const metadata: Metadata = {
-  title: "Social Media Policy Tracker - Pitt Cyber ",
+  title: "Social Media Election Policies - Pitt Cyber ",
   description: "A timeline of major social media policy changes.",
 };
 
