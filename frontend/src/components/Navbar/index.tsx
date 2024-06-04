@@ -15,7 +15,9 @@ export default async function Navbar(): Promise<ReactElement> {
       <div className="mx-auto max-w-screen-xl flex-none p-2">
         <div className="my-2 items-end md:my-4 md:flex md:space-x-4">
           <div className="pr-4 text-left">
-            <Image src={logo} alt="University of Pittsburgh" height={48} />
+            <a href="https://cyber.pitt.edu">
+              <Image src={logo} alt="University of Pittsburgh" height={48} />
+            </a>
           </div>
 
           <div className="hidden h-10 border-r border-zinc-300 border-opacity-40 md:block" />
