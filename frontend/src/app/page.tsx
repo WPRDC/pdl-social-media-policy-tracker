@@ -173,7 +173,10 @@ export default async function About() {
               <ul className={listStyle}>
                 <li className={listItemStyle}>
                   <strong>
-                    <a className="font-bold" href="/about">
+                    <a
+                      className="font-bold"
+                      href="/social-media-election-policies/about"
+                    >
                       About
                     </a>
                   </strong>
@@ -182,7 +185,10 @@ export default async function About() {
                 </li>
                 <li className={listItemStyle}>
                   <strong>
-                    <a className="font-bold" href="/timeline">
+                    <a
+                      className="font-bold"
+                      href="/social-media-election-policies/timeline"
+                    >
                       Full timeline
                     </a>
                   </strong>
@@ -195,7 +201,10 @@ export default async function About() {
                 </li>
                 <li className={listItemStyle}>
                   <strong>
-                    <a className="font-bold" href="/compare">
+                    <a
+                      className="font-bold"
+                      href="/social-media-election-policies/compare"
+                    >
                       Comparison timeline
                     </a>
                   </strong>
