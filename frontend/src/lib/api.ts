@@ -6,6 +6,10 @@ export async function requestTimeline(): Promise<Timeline> {
   return requestFunction<Timeline>(Endpoint.Timeline);
 }
 
+export async function requestLastUpdated(): Promise<{ lastUpdated: string }> {
+  return requestFunction<Timeline>(Endpoint.LastUpdated);
+}
+
 export async function requestPlatforms(): Promise<Platform[]> {
   return requestList<Platform>(Endpoint.Platform);
 }

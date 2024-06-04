@@ -1,5 +1,6 @@
 import {
   requestCategories,
+  requestLastUpdated,
   requestPlatforms,
   requestTimeline,
 } from "@/lib/api";

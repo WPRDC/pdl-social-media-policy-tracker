@@ -20,6 +20,7 @@ export interface APIOptions extends RequestInit {
 
 export enum Endpoint {
   Timeline = "tracker/timeline",
+  LastUpdated = "tracker/last-updated",
   Records = "tracker/records",
   Category = "tracker/category",
   Platform = "tracker/platform",

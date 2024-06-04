@@ -1,5 +1,6 @@
-from rest_framework import routers
 from django.urls import path
+from rest_framework import routers
+
 from tracker.views import (
     RecordViewSet,
     CitationViewSet,
@@ -7,6 +8,7 @@ from tracker.views import (
     PlatformViewSet,
     FirmViewSet,
     timeline_view,
+    last_updated_view,
 )
 
 router = routers.SimpleRouter()
@@ -18,4 +20,5 @@ router.register(r"citation", CitationViewSet)
 
 urlpatterns = router.urls + [
     path("timeline", timeline_view),
+    path("last-updated", last_updated_view)
 ]

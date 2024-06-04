@@ -21,6 +21,11 @@ def extract_list_arg(arg: str | None) -> list[str] | None:
         return None
     return arg.split(',')
 
+@api_view(['GET'])
+def last_updated_view(request: Request) -> Response:
+    last_updated = Record.objects.order_by('-created_at')[0]
+    return Response({'last_updated': last_updated.created_at.isoformat()})
+
 @api_view(["GET"])
 @permission_classes([permissions.IsAuthenticatedOrReadOnly])
 def timeline_view(request: Request):

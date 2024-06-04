@@ -5,10 +5,13 @@ import React, { ReactElement } from "react";
 import NavMenu from "./NavMenu";
 
 import logo from "./pitt_logo.png";
+import { requestLastUpdated } from "@/lib/api";
 
-export default function Navbar(): ReactElement {
+export default async function Navbar(): Promise<ReactElement> {
+  const { lastUpdated } = await requestLastUpdated();
+
   return (
-    <div className="w-full bg-royal bg-navbar-texture bg-cover">
+    <div className="relative w-full bg-royal bg-navbar-texture bg-cover">
       <div className="mx-auto max-w-screen-xl flex-none p-2">
         <div className="my-2 items-end md:my-4 md:flex md:space-x-4">
           <div className="pr-4 text-left">
@@ -29,7 +32,13 @@ export default function Navbar(): ReactElement {
         </div>
         <div className="flex-grow" />
       </div>
-      <NavMenu />
+      <div className="mx-auto flex max-w-screen-xl flex-col-reverse justify-between md:flex-row md:items-center">
+        <NavMenu />
+        <div className="pl-2 pr-2 font-mono text-sm text-zinc-300">
+          <strong>Last Updated: </strong>{" "}
+          {new Date(lastUpdated).toLocaleDateString("en-US", {})}
+        </div>
+      </div>
     </div>
   );
 }
