@@ -7,7 +7,7 @@ export async function requestTimeline(): Promise<Timeline> {
 }
 
 export async function requestLastUpdated(): Promise<{ lastUpdated: string }> {
-  return requestFunction<Timeline>(Endpoint.LastUpdated);
+  return requestFunction<{ lastUpdated: string }>(Endpoint.LastUpdated);
 }
 
 export async function requestPlatforms(): Promise<Platform[]> {
