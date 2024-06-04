@@ -82,9 +82,9 @@ export default async function About() {
                 decisively to limit stolen election content. Following the 2022
                 midterm election cycle, researchers and media have raised{" "}
                 <a href="https://www.washingtonpost.com/technology/2023/08/25/political-conspiracies-facebook-youtube-elon-musk/">
-                  concern
+                  concerns
                 </a>
-                s that social media companies are{" "}
+                that social media companies are{" "}
                 <a href="https://www.washingtonpost.com/technology/2023/08/25/political-conspiracies-facebook-youtube-elon-musk/">
                   stepping back
                 </a>{" "}
@@ -120,7 +120,7 @@ export default async function About() {
                 are and are not exposed to.
               </p>
             </div>
-            N
+
             <div className={sectionStyle}>
               <h2 className={headingStyle}>Tracker Parameters</h2>
               <p className={paragraphStyle}>
