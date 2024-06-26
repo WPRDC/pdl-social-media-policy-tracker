@@ -1,6 +1,5 @@
 import { getCookie } from "@/lib/util";
 import { DjangoResponse, Endpoint } from "@/types/api";
-import { TrackerRecord } from "@/types/model";
 
 export const HOST = process.env.NEXT_PUBLIC_API_HOST || "localhost:8000";
 

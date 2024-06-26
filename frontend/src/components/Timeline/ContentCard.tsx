@@ -5,6 +5,7 @@ import { ReactElement, useState } from "react";
 import { ParsedHTML } from "@/components/ParsedHTML";
 import Link from "next/link";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
+import { TbExternalLink } from "react-icons/tb";
 
 export interface ContentCardProps {
   record?: TrackerRecord;
@@ -51,9 +52,11 @@ export function ContentCard({ record }: ContentCardProps): ReactElement {
                 <div className="w-full overflow-x-auto" key={citation}>
                   <Link
                     href={citation}
-                    className="line-clamp-1 break-words font-mono text-sm text-blue-800 underline hover:text-blue-500"
+                    target="_blank"
+                    className="line-clamp-1 flex w-fit break-words pb-0.5 font-mono text-sm text-blue-800 underline hover:text-blue-500"
                   >
-                    {new URL(citation).hostname}
+                    <span>{new URL(citation).hostname}</span>
+                    <TbExternalLink />
                   </Link>
                 </div>
               ))}

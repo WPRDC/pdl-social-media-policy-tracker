@@ -172,16 +172,9 @@ export default async function About() {
               </p>
               <ul className={listStyle}>
                 <li className={listItemStyle}>
-                  <strong>
-                    <a
-                      className="font-bold"
-                      href="/social-media-election-policies/about"
-                    >
-                      About
-                    </a>
-                  </strong>
-                  : Click this to come back to the homepage, which provides an
-                  overview of the timeline’s goals, methodology and parameters.
+                  <strong>About</strong>: Click this to come back to the this
+                  page, which provides an overview of the timeline’s goals,
+                  methodology and parameters.
                 </li>
                 <li className={listItemStyle}>
                   <strong>

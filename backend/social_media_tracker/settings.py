@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-(d5j$*5!9i+9^v8wq0l8r677hca90s(9@xxkv!ht4t=5gc7l4&")
 
-DEBUG = os.environ.get("DEBUG", "false") == "true"
+DEBUG = os.environ.get("DEBUG", "false").lower() in ["true", 1, '1', True]
 
 ALLOWED_HOSTS = json.loads(
     os.environ.get(
@@ -184,6 +184,6 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = json.loads(os.environ.get("CORS_ALLOWED_ORIGINS", "[]"))
 
-FORCE_SCRIPT_NAME = "/api/"
+FORCE_SCRIPT_NAME = "" if DEBUG else "/api/"
 
 

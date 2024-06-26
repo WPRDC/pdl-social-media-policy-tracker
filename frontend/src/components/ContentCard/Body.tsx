@@ -2,6 +2,7 @@ import { TrackerRecord } from "@/types/model";
 import Link from "next/link";
 import { ParsedHTML } from "@/components/ParsedHTML";
 import { ReactNode, useState } from "react";
+import { TbExternalLink } from "react-icons/tb";
 
 export interface BodyProps extends TrackerRecord {}
 
@@ -23,12 +24,14 @@ export function Body({ summary, citations, details, category }: BodyProps) {
       {/* Citations */}
       <div>
         {citations.map((citation) => (
-          <div className="w-full overflow-x-auto" key={citation}>
+          <div className="items-baseline overflow-x-auto" key={citation}>
             <Link
               href={citation}
-              className="line-clamp-1 break-words font-mono text-sm text-blue-800 underline hover:text-blue-500"
+              target="_blank"
+              className="line-clamp-1 flex w-fit break-words pb-0.5 font-mono text-sm text-blue-800 underline hover:text-blue-500"
             >
-              {new URL(citation).hostname}
+              <span>{new URL(citation).hostname}</span>
+              <TbExternalLink />
             </Link>
           </div>
         ))}
