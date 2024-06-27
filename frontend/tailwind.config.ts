@@ -29,7 +29,7 @@ const config: Config = {
         lg: "8px 8px 0 #4b5563",
         "sm-inner": "inset 2px 2px 0 #4b5563",
         "md-inner": "inset 3px 3px 0 #4b5563",
-        DEFAULT: "8px 8px 0 #4b5563",
+        DEFAULT: "2px 2px 4px #4b5563",
       },
       colors: {
         primary: colors.cyan,

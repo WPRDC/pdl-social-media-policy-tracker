@@ -4,7 +4,7 @@ import {
   Category,
   Named,
   Platform,
-  Timeline,
+  type Timeline,
   TrackerRecord,
 } from "@/types/model";
 import { TimelineItem } from "@/components/Timeline/TimelineItem";

@@ -4,7 +4,7 @@ import { Position } from "@/types/ui";
 
 import { DateMarker } from "./DateMarker";
 import { TimePointMarker } from "./TimePointMarker";
-import { ContentCard } from "./ContentCard";
+import { ContentCard } from "@/components/ContentCard";
 
 export interface TimelineItemProps {
   date?: string;

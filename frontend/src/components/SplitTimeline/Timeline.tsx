@@ -1,7 +1,12 @@
 "use client";
 
 import { Key, useState } from "react";
-import { Category, Platform, Timeline, TrackerRecord } from "@/types/model";
+import {
+  Category,
+  Platform,
+  type Timeline,
+  TrackerRecord,
+} from "@/types/model";
 import { Set } from "immutable";
 
 import { TimelineItem } from "./TimelineItem";
