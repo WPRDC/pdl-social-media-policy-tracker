@@ -24,12 +24,12 @@ export function DateMarker({ date, position }: DateMarkerProps): ReactElement {
   return (
     <div
       className={classNames(
-        "flex w-16 flex-shrink-0 items-center md:w-32 lg:w-40",
+        "flex w-16 flex-shrink-0 flex-col justify-between py-2 md:w-28 lg:w-32",
         position !== "start" && "border-t border-black",
       )}
     >
-      <div className="w-full px-4 text-right font-mono font-black uppercase md:text-xl lg:text-2xl">
-        {content}
+      <div className="relative w-full px-4 text-right font-mono font-black uppercase md:text-xl lg:text-2xl">
+        <div className={classNames(!position && "sticky pt-6")}>{content}</div>
       </div>
     </div>
   );

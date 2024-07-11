@@ -1,36 +1,40 @@
 import Link from "next/link";
 import React, { ReactElement, ReactNode } from "react";
-
+import { TbGitCommit, TbGitCompare } from "react-icons/tb";
 export default function NavMenu(): ReactElement {
   const menuList: ReactNode = (
-    <ul className="flex w-full">
-      <li className="px-5 py-4 font-sans text-sm font-semibold uppercase text-gold">
-        <Link className="text-gold no-underline hover:text-white" href={"/"}>
+    <ul className="mx-auto flex w-full justify-center">
+      <li className="px-5 py-4">
+        <Link
+          className="flex items-center font-bold text-slate-800 no-underline hover:text-amber-500"
+          href={"/"}
+        >
           About
         </Link>
       </li>
-      <li className="px-5 py-4 font-sans text-sm font-semibold uppercase text-gold">
+      <li className="px-5 py-4">
         <Link
-          className="text-gold no-underline hover:text-white"
+          className="flex items-center font-bold text-slate-800 no-underline hover:text-amber-500"
           href={"/timeline"}
         >
-          Full Timeline
+          <TbGitCommit className="mr-0.5 size-4" />
+          <div>Full Timeline</div>
         </Link>
       </li>
-      <li className="px-5 py-4 font-sans text-sm font-semibold uppercase text-gold">
+      <li className="px-5 py-4">
         <Link
-          className="text-gold no-underline hover:text-white"
+          className="flex items-center font-bold text-slate-800 no-underline hover:text-amber-500"
           href={"/compare"}
         >
-          Comparison Timeline
+          <TbGitCompare className="mr-0.5 size-4" />
+          <div>Comparison Timeline</div>
         </Link>
       </li>
-      <div className="flex-grow" />
     </ul>
   );
   return (
-    <div className="container mx-auto flex max-w-screen-lg flex-col justify-between">
+    <nav className="container mx-auto flex max-w-screen-lg flex-col justify-between">
       {menuList}
-    </div>
+    </nav>
   );
 }

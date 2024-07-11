@@ -9,3 +9,16 @@ body {
 body a {
   @apply font-sans font-semibold text-royal underline underline-offset-2 hover:text-pittblue hover:decoration-2;
 }
+
+.parsed-html {
+  @apply space-y-1;
+}
+
+.parsed-html ul {
+  @apply list-inside;
+  @apply space-y-1;
+}
+
+.parsed-html ul li {
+  @apply ml-4 -indent-4;
+}

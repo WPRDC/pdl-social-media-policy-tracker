@@ -32,15 +32,15 @@ export function SelectionItem(props: SelectionItemProps) {
   return (
     <div
       className={classNames(
-        "mb-2 mr-2 inline-block cursor-pointer items-center rounded-lg border-2 border-black text-xs font-semibold last-of-type:m-0 hover:shadow-sm active:shadow-sm-inner",
-        isSelected ? "bg-skyblue" : "bg-none",
+        "inline-block cursor-pointer items-center rounded border-2 border-black font-mono text-xs font-bold last-of-type:m-0 hover:shadow-sm active:shadow-sm-inner",
+        isSelected ? "bg-cyan-300" : "bg-none",
         isDisabled && "bg-gray-300",
         isFocusVisible ? "border-pink-500 shadow-sm" : "border-black",
       )}
     >
       <label
         className={classNames(
-          "block cursor-pointer px-2 py-1",
+          "block cursor-pointer px-1 py-0.5",
           isDisabled && "cursor-not-allowed",
         )}
       >
@@ -50,12 +50,12 @@ export function SelectionItem(props: SelectionItemProps) {
           className="sr-only"
           disabled={isDisabled}
         />
-        <div className="flex items-center space-x-1">
+        <div className="flex items-center space-x-0.5">
           <div>
             {isSelected ? (
-              <BiCheck className="h-4 w-4" />
+              <BiCheck className="size-3" />
             ) : (
-              <BiX className="h-4 w-4" />
+              <BiX className="size-3" />
             )}
           </div>
           <div>{children}</div>

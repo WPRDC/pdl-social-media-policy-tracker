@@ -56,7 +56,7 @@ export function Select<T extends object>(props: AriaSelectProps<T>) {
           isFocusVisible && "outline outline-pink-500",
         )}
       >
-        <span {...valueProps} className="font-rubik text-3xl font-bold">
+        <span {...valueProps} className="font-display text-3xl font-bold">
           {state.selectedItem
             ? state.selectedItem.rendered
             : "Select an option"}
