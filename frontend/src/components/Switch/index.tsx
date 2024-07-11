@@ -1,8 +1,9 @@
 "use client";
-import { useToggleState } from "react-stately";
+
 import { useFocusRing, useSwitch, VisuallyHidden } from "react-aria";
 import { useRef } from "react";
 import { AriaSwitchProps } from "@react-types/switch";
+import { useToggleState } from "@/components/client-components";
 
 export function Switch(props: AriaSwitchProps) {
   let state = useToggleState(props);
