@@ -82,7 +82,7 @@ export function Timeline({ timeline, platforms, categories }: TimelineProps) {
 
       {Object.entries(timeline).map(([date, records]) => {
         const filteredRecords = filterRecords(records);
-        if (!!filteredRecords && !!filteredRecords.length)
+        if (!!filteredRecords)
           return (
             <TimelineItem
               key={date}

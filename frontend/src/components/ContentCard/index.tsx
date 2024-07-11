@@ -25,8 +25,6 @@ export interface ContentCardProps {
 export function ContentCard({ record, split }: ContentCardProps): ReactElement {
   const Icon = getIcon(record?.platform.slug ?? "default");
 
-  console.log(record?.platform.slug ?? "default", Icon);
-
   const dateStr = new Date(record?.date ?? "").toLocaleDateString("en-US", {
     month: "short",
     year: "numeric",

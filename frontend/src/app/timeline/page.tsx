@@ -11,6 +11,7 @@ export default async function TimelineRoute() {
   const platforms = await requestPlatforms();
   const categories = await requestCategories();
   const { lastUpdated } = await requestLastUpdated();
+
   return (
     <main className="my-6">
       <div id="timelines" className="relative flex space-x-2">

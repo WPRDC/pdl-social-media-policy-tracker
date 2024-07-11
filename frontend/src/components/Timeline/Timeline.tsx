@@ -1,18 +1,19 @@
 "use client";
-
 import {
   Category,
   Named,
   Platform,
+  Timeline as ITimeline,
   type Timeline,
   TrackerRecord,
 } from "@/types/model";
 import { TimelineItem } from "@/components/Timeline/TimelineItem";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import { Set } from "immutable";
 import { MultiSelect } from "@/components/MultiSelect";
 import { SelectionItem } from "@/components/MultiSelect/SelectionItem";
+import { Switch } from "../Switch";
 
 export interface TimelineProps {
   timeline: Timeline;
@@ -23,7 +24,7 @@ export interface TimelineProps {
 }
 
 export function Timeline({
-  timeline,
+  timeline: _timeline,
   platforms,
   categories,
   lastUpdated,
@@ -34,6 +35,8 @@ export function Timeline({
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
     Set(categories.map((c) => c.slug)),
   );
+  const [hideEmpty, setHideEmpty] = useState<boolean>(false);
+
   const handleFilterChange =
     (mode: "platforms" | "categories") => (value: string[]) => {
       if (!value.length) return;
@@ -52,6 +55,11 @@ export function Timeline({
       .filter((r) => selectedPlatforms.has(r.platform.slug))
       .filter((r) => selectedCategories.has(r.category.slug));
   }
+
+  const timeline = useMemo(() => {
+    if (hideEmpty) return _timeline;
+    return fillTimeline(_timeline);
+  }, [hideEmpty, _timeline]);
 
   return (
     <div className="flex w-full max-w-screen-2xl flex-row-reverse justify-between md:mx-auto">
@@ -77,6 +85,17 @@ export function Timeline({
             collection={categories}
             onChange={handleFilterChange("categories")}
           />
+
+          <div className="pt-3">
+            <Switch
+              isSelected={hideEmpty}
+              onChange={(v: boolean) => setHideEmpty(v)}
+            >
+              <div className="font-mono text-sm font-semibold">
+                Hide empty months
+              </div>
+            </Switch>
+          </div>
         </div>
       </div>
 
@@ -85,7 +104,7 @@ export function Timeline({
         <TimelineItem position="start" />
         {Object.entries(timeline).map(([date, records]) => {
           const filteredRecords = filterRecords(records);
-          if (!!filteredRecords && !!filteredRecords.length)
+          if (!!filteredRecords)
             return (
               <TimelineItem key={date} date={date} records={filteredRecords} />
             );
@@ -131,4 +150,30 @@ function FilterControl({
 
 function toSlugArray(things: Iterable<Named>): string[] {
   return Array.from(things).map((t) => t.slug);
+}
+
+function fillTimeline(timeline: ITimeline): ITimeline {
+  const START = Object.keys(timeline)[Object.keys(timeline).length - 1];
+  const START_YEAR = parseInt(START.split("-")[0]);
+  const THIS_YEAR = new Date().getFullYear();
+  const THIS_MONTH = new Date().getMonth();
+
+  const result: ITimeline = {};
+
+  // iterate to start monthly, monthly
+  for (let curYear = THIS_YEAR; curYear >= START_YEAR; curYear--) {
+    const endMonth = curYear === THIS_YEAR ? THIS_MONTH : 12; // this month or december
+    for (let curMonth = endMonth; curMonth >= 1; curMonth--) {
+      const k = `${curYear}-${curMonth}-01`;
+
+      // if this date isn't there, add it
+      if (timeline[k]) {
+        result[k] = timeline[k];
+      } else {
+        result[k] = [];
+      }
+    }
+  }
+
+  return result;
 }

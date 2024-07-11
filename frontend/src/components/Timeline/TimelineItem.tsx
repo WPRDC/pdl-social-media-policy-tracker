@@ -27,9 +27,19 @@ export function TimelineItem({ date, records, position }: TimelineItemProps) {
         )}
       >
         {records &&
+          !!records.length &&
           records.map((record, i) => (
             <ContentCard key={`${i}`} record={record} />
           ))}
+        {(!records || !records.length) && !position && (
+          <div className="flex h-16 items-center ">
+            <div className="flex items-center">
+              <div className="text-sm font-medium italic text-gray-700">
+                No activity this month for the selected filter criteria.
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
