@@ -6,6 +6,7 @@ export {
   useFilter,
   useButton,
   useSearchField,
+  useSwitch,
 } from "react-aria";
 
 export {
@@ -15,4 +16,5 @@ export {
   useSearchFieldState,
   useAsyncList,
   useListData,
+  useToggleState,
 } from "react-stately";
