@@ -17,10 +17,9 @@ const config: Config = {
           "url('/social-media-election-policies/bg_footer.png')",
       },
       fontFamily: {
-        sans: ["var(--font-open-sans)", "Arial", "sans-serif"],
+        sans: ["var(--font-noto-sans)", "Arial", "sans-serif"],
         mono: ["var(--font-jetbrains-mono)", "monospace"],
-        rubik: ["var(--font-rubik)", "Arial", "sans-serif"],
-        cooper: ["var(--cooper-hewitt)", "Arial", "sans-serif"],
+        display: ["var(--font-oswald)", "Arial", "sans-serif"],
       },
       boxShadow: {
         "sm-rev": "-2px -2px 0 #4b5563",

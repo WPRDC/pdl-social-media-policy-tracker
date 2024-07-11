@@ -23,9 +23,9 @@ export function TimePointMarker({
       {/* circle */}
       <div
         className={classNames(
-          "flex flex-col items-center rounded-full border-8 border-black bg-black",
+          "flex flex-col items-center rounded-full border-8 bg-black",
           !position
-            ? "h-6 w-6 bg-black md:h-8 md:w-8"
+            ? "h-6 w-6 border-transparent bg-black bg-transparent md:h-8 md:w-8"
             : "mx-auto h-3 w-3 border-black bg-black md:h-6 md:w-6",
         )}
       >

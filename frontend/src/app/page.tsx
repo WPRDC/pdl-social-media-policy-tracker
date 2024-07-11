@@ -1,54 +1,57 @@
 import { tw } from "@/lib/util";
+import Image from "next/image";
+import React from "react";
+import { requestLastUpdated } from "@/lib/api";
 
 export default async function About() {
   const sectionStyle = tw`pt-6 first:pt-0`;
-  const headingStyle = tw`pb-2 font-rubik text-2xl font-bold after:content-[':'] lg:text-3xl`;
+  const headingStyle = tw`pb-2 font-display text-2xl font-bold after:content-[':'] lg:text-3xl`;
   const paragraphStyle = tw`pb-3 font-sans leading-relaxed lg:text-lg`;
   const listStyle = "pl-4 lg:text-lg";
   const listItemStyle = "pb-3 leading-relaxed list-disc";
   const tocItemStyle = tw`mb-1`;
   const tocLinkStyle = tw``;
 
+  const { lastUpdated } = await requestLastUpdated();
+
   return (
     <main className="my-6 px-3 pb-20">
       <div className="mx-auto max-w-screen-lg font-medium">
-        <h1 className="my-6 font-rubik text-3xl font-bold md:text-5xl">
-          Social Media Election Policy Tracker
-        </h1>
-
         <div className="lg:flex lg:flex-row-reverse">
-          <nav className="mb-2 h-fit border-black p-4 text-sm lg:mb-0 lg:w-1/4 lg:border">
-            <div className="mb-1 font-rubik text-base font-bold">
+          <div className="mb-2 h-fit border-black p-4 text-sm lg:mb-0 lg:w-1/4 lg:border">
+            <div className="mb-1 font-display text-base font-bold">
               On this page:
             </div>
-            <ol>
-              <li className={tocItemStyle}>
-                <a className={tocLinkStyle} href="#overview">
-                  Tracker Overview & Objectives
-                </a>
-              </li>
-              <li className={tocItemStyle}>
-                <a className={tocLinkStyle} href="#parameters">
-                  Tracker Parameters
-                </a>
-              </li>
-              <li className={tocItemStyle}>
-                <a className={tocLinkStyle} href="#methodology">
-                  Methodology
-                </a>
-              </li>
-              <li className={tocItemStyle}>
-                <a className={tocLinkStyle} href="#howto">
-                  How to Use the Tracker
-                </a>
-              </li>
-              <li className={tocItemStyle}>
-                <a className={tocLinkStyle} href="#considerations">
-                  Additional Considerations
-                </a>
-              </li>
-            </ol>
-          </nav>
+            <nav>
+              <ol>
+                <li className={tocItemStyle}>
+                  <a className={tocLinkStyle} href="#overview">
+                    Tracker Overview & Objectives
+                  </a>
+                </li>
+                <li className={tocItemStyle}>
+                  <a className={tocLinkStyle} href="#parameters">
+                    Tracker Parameters
+                  </a>
+                </li>
+                <li className={tocItemStyle}>
+                  <a className={tocLinkStyle} href="#methodology">
+                    Methodology
+                  </a>
+                </li>
+                <li className={tocItemStyle}>
+                  <a className={tocLinkStyle} href="#howto">
+                    How to Use the Tracker
+                  </a>
+                </li>
+                <li className={tocItemStyle}>
+                  <a className={tocLinkStyle} href="#considerations">
+                    Additional Considerations
+                  </a>
+                </li>
+              </ol>
+            </nav>
+          </div>
 
           <div className="lg:w-3/4 lg:pr-6">
             <div id="overview" className={sectionStyle}>

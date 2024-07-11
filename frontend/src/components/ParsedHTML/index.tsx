@@ -17,7 +17,7 @@ export function ParsedHTML({
   id,
 }: ParsedHTMLProps) {
   return (
-    <div className={classNames("", className)} id={id}>
+    <div className={classNames("parsed-html", className)} id={id}>
       {parse(children ?? "", {
         replace: replacer ?? defaultReplace,
       })}

@@ -62,7 +62,7 @@ export function TimelineItem({
                   </Select>
                   {index > 1 && (
                     <button
-                      className="active:shadow-md-inner mt-1.5 flex items-center rounded-md border-2 border-black bg-red-300 px-1 py-0.5 font-mono text-sm hover:shadow-md active:bg-red-400"
+                      className="mt-1.5 flex items-center rounded-md border-2 border-black bg-red-300 px-1 py-0.5 font-mono text-sm hover:shadow-md active:bg-red-400 active:shadow-md-inner"
                       onClick={() => onPlatformSelect(index)(null)}
                     >
                       <BiX />
@@ -76,6 +76,7 @@ export function TimelineItem({
                 key={timelinePlatforms[0].slug}
                 platform={platform}
                 records={records}
+                split={true}
               />
             </Row>
 
@@ -84,7 +85,7 @@ export function TimelineItem({
               index + 1 < MAX_PLATFORMS && (
                 <div className="flex items-center">
                   <button
-                    className="active:shadow-md-inner flex items-center rounded-md border-2 border-black bg-green-300 px-1.5 py-1 font-mono hover:shadow-md active:bg-green-400"
+                    className="flex items-center rounded-md border-2 border-black bg-green-300 px-1.5 py-1 font-mono hover:shadow-md active:bg-green-400 active:shadow-md-inner"
                     onClick={() =>
                       onPlatformSelect(index + 1)(
                         getNextPlatform(platforms, timelinePlatforms) ??

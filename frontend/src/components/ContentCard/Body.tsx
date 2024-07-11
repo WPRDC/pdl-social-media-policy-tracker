@@ -1,7 +1,7 @@
 import { TrackerRecord } from "@/types/model";
 import Link from "next/link";
 import { ParsedHTML } from "@/components/ParsedHTML";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import { TbExternalLink } from "react-icons/tb";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
@@ -13,25 +13,27 @@ export function Body({ summary, citations, details, category }: BodyProps) {
   return (
     <div className="px-4 py-2">
       {/* Summary */}
-      <div className="mb-2 font-rubik text-lg font-semibold">{summary}</div>
+      <div className="mb-3 font-sans text-sm font-semibold">{summary}</div>
 
       {/* Citations */}
       <div>
-        <div className="mt-2 font-sans text-xs font-bold uppercase text-stone-600">
-          Source{citations.length === 1 ? "" : "s"}
+        <div className="mt-2 flex items-center font-mono text-xs font-bold uppercase text-stone-600">
+          <div>Source{citations.length === 1 ? "" : "s"}</div>
         </div>
-        {citations.map((citation) => (
-          <div className="items-baseline overflow-x-auto" key={citation}>
-            <Link
-              href={citation}
-              target="_blank"
-              className="line-clamp-1 flex w-fit break-words pb-0.5 font-mono text-sm text-blue-800 underline hover:text-blue-500"
-            >
-              <span>{new URL(citation).hostname}</span>
-              <TbExternalLink />
-            </Link>
-          </div>
-        ))}
+        <ul className="list-inside list-disc text-slate-700">
+          {citations.map((citation) => (
+            <li className="overflow-x-auto" key={citation}>
+              <Link
+                href={citation}
+                target="_blank"
+                className="-ml-2.5 inline-flex w-fit font-mono text-sm text-blue-800 underline hover:text-blue-500"
+              >
+                <span>{new URL(citation).hostname}</span>
+                <TbExternalLink />
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Show More*/}
@@ -53,6 +55,7 @@ export function Body({ summary, citations, details, category }: BodyProps) {
           )}
         </button>
       )}
+
       {/* Details */}
       <div
         className={`${
@@ -61,7 +64,7 @@ export function Body({ summary, citations, details, category }: BodyProps) {
       >
         {!!details && (
           <div className="pb-2 pt-1">
-            <ParsedHTML className="text font-medium">{details}</ParsedHTML>
+            <ParsedHTML className="text-xs font-medium">{details}</ParsedHTML>
           </div>
         )}
       </div>

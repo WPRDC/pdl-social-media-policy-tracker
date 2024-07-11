@@ -5,6 +5,7 @@ import { Position } from "@/types/ui";
 import { DateMarker } from "./DateMarker";
 import { TimePointMarker } from "./TimePointMarker";
 import { ContentCard } from "@/components/ContentCard";
+import { asID } from "@/lib/util";
 
 export interface TimelineItemProps {
   date?: string;
@@ -14,12 +15,14 @@ export interface TimelineItemProps {
 
 export function TimelineItem({ date, records, position }: TimelineItemProps) {
   return (
-    <div className="flex w-full items-stretch px-1">
+    <div className="flex w-full items-stretch px-1" id={asID(date ?? "")}>
       <DateMarker date={date} position={position} />
       <TimePointMarker position={position} />
+
+      {/* Cards */}
       <div
         className={classNames(
-          "w-full border-slate-400 py-4",
+          "w-full border-black py-4",
           position !== "start" && "border-t",
         )}
       >

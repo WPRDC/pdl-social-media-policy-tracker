@@ -13,3 +13,7 @@ export const MAX_PLATFORMS = 3;
 // template string pass-through function to signal prettier to format strings
 export const tw = (strings: ArrayLike<string>, ...values: string[]) =>
   String.raw({ raw: strings }, ...values);
+
+export function asID(d: string): string {
+  return d.trim().replace(/\s/g, "");
+}

@@ -19,16 +19,21 @@ export interface TimelineProps {
   platforms: Platform[];
   categories: Category[];
   size?: "S" | "M" | "L";
+  lastUpdated: string;
 }
 
-export function Timeline({ timeline, platforms, categories }: TimelineProps) {
+export function Timeline({
+  timeline,
+  platforms,
+  categories,
+  lastUpdated,
+}: TimelineProps) {
   const [selectedPlatforms, setSelectedPlatforms] = useState<Set<string>>(
     Set(platforms.map((p) => p.slug)),
   );
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
     Set(categories.map((c) => c.slug)),
   );
-
   const handleFilterChange =
     (mode: "platforms" | "categories") => (value: string[]) => {
       if (!value.length) return;
@@ -49,31 +54,44 @@ export function Timeline({ timeline, platforms, categories }: TimelineProps) {
   }
 
   return (
-    <div className="w-full max-w-screen-lg md:mx-auto">
-      <FilterControl
-        label="Filter by Platform"
-        selected={selectedPlatforms}
-        collection={platforms}
-        onChange={handleFilterChange("platforms")}
-      />
-      <FilterControl
-        label="Filter by Category"
-        selected={selectedCategories}
-        collection={categories}
-        onChange={handleFilterChange("categories")}
-      />
+    <div className="flex w-full max-w-screen-2xl flex-row-reverse justify-between md:mx-auto">
+      {/* Floating Menu */}
+      <div className="sticky top-0 h-fit w-64 p-4 ">
+        <div className="pl-2 pr-2 font-mono text-sm text-zinc-800">
+          <strong className="font-sans text-xs">Last Updated: </strong>{" "}
+          {new Date(lastUpdated).toLocaleDateString("en-US", {})}
+        </div>
 
-      <TimelineItem position="start" />
+        <div className="border-2 bg-white p-2">
+          <FilterControl
+            label="Toggle Platforms"
+            selected={selectedPlatforms}
+            collection={platforms}
+            onChange={handleFilterChange("platforms")}
+            className="pb-3.5"
+          />
 
-      {Object.entries(timeline).map(([date, records]) => {
-        const filteredRecords = filterRecords(records);
-        if (!!filteredRecords && !!filteredRecords.length)
-          return (
-            <TimelineItem key={date} date={date} records={filteredRecords} />
-          );
-      })}
+          <FilterControl
+            label="Toggle Categories"
+            selected={selectedCategories}
+            collection={categories}
+            onChange={handleFilterChange("categories")}
+          />
+        </div>
+      </div>
 
-      <TimelineItem position="end" />
+      {/* Timeline */}
+      <div className="max-w-screen-lg">
+        <TimelineItem position="start" />
+        {Object.entries(timeline).map(([date, records]) => {
+          const filteredRecords = filterRecords(records);
+          if (!!filteredRecords && !!filteredRecords.length)
+            return (
+              <TimelineItem key={date} date={date} records={filteredRecords} />
+            );
+        })}
+        <TimelineItem position="end" />
+      </div>
     </div>
   );
 }
@@ -83,6 +101,7 @@ interface FilterControlProps {
   selected: Set<string>;
   collection: Named[];
   onChange: (selection: string[]) => void;
+  className?: string;
 }
 
 function FilterControl({
@@ -90,6 +109,7 @@ function FilterControl({
   selected,
   collection,
   onChange,
+  className,
 }: FilterControlProps) {
   return (
     <div>
@@ -97,10 +117,11 @@ function FilterControl({
         label={label}
         value={Array.from(selected)}
         onChange={onChange}
+        className={className}
       >
         {collection.map(({ slug, name }) => (
           <SelectionItem key={slug} value={slug}>
-            {name}
+            {name.split("–")[0]}
           </SelectionItem>
         ))}
       </MultiSelect>
