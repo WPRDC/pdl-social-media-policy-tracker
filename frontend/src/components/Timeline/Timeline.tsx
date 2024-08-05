@@ -164,12 +164,13 @@ function fillTimeline(timeline: ITimeline): ITimeline {
 
   const result: ITimeline = {};
 
+  // first, flatten dates in timeline to make filtering easy
+
   // iterate to start monthly, monthly
   for (let curYear = THIS_YEAR; curYear >= START_YEAR; curYear--) {
     const endMonth = curYear === THIS_YEAR ? THIS_MONTH : 12; // this month or december
     for (let curMonth = endMonth; curMonth >= 1; curMonth--) {
-      const k = `${curYear}-${curMonth}-01`;
-
+      const k = `${curYear}-${String(curMonth).padStart(2, "0")}-01`;
       // if this date isn't there, add it
       if (timeline[k]) {
         result[k] = timeline[k];
