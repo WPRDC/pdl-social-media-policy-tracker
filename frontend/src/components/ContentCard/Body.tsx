@@ -7,7 +7,7 @@ import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
 export interface BodyProps extends TrackerRecord {}
 
-export function Body({ summary, citations, details, category }: BodyProps) {
+export function Body({ summary, citations, details }: BodyProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (

@@ -34,7 +34,7 @@ class CitationInline(admin.TabularInline):
 
 @admin.register(Record)
 class RecordAdmin(admin.ModelAdmin):
-    list_display = ("summary", "category", "date", "platform")
+    list_display = ("summary", "date", "platform")
     inlines = (CitationInline,)
 
     form = RecordForm

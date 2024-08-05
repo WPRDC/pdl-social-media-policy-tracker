@@ -20,7 +20,8 @@ class Record(TimeStamped):
     details = HTMLField(null=True, blank=True)
     date = models.DateField()
 
-    category = models.ForeignKey("Category", related_name="records", on_delete=models.PROTECT)
+    categories = models.ManyToManyField("Category", related_name="records", blank=True)
+
     platform = models.ForeignKey(
         "Platform",
         related_name="records",
@@ -31,7 +32,7 @@ class Record(TimeStamped):
         ordering = ["-date"]
 
     def __str__(self):
-        return f"{self.summary} ({self.category})"
+        return f"{self.summary}"
 
 
 class Firm(TimeStamped):

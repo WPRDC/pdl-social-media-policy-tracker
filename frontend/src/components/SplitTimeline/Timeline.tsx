@@ -65,7 +65,11 @@ export function Timeline({ timeline, platforms, categories }: TimelineProps) {
 
   function filterRecords(records: TrackerRecord[]) {
     return records
-      .filter((r) => selectedCategories.has(r.category.slug))
+      .filter(
+        (r) =>
+          selectedCategories.intersect(Set(r.categories.map((c) => c.slug)))
+            .size > 0,
+      )
       .filter((r) =>
         timelinePlatforms.map((p) => p.slug).includes(r.platform.slug),
       );
