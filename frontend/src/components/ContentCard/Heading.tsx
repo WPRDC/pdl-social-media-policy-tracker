@@ -3,11 +3,11 @@ import { Category, Platform } from "@/types/model";
 
 export interface HeadingProps {
   platform?: Platform;
-  category?: Category;
+  categories: Category[];
   split?: boolean;
 }
 
-export function Heading({ platform, category, split }: HeadingProps) {
+export function Heading({ platform, categories, split }: HeadingProps) {
   return (
     <div
       className={classNames(
@@ -20,14 +20,16 @@ export function Heading({ platform, category, split }: HeadingProps) {
       }}
     >
       {!split && <div className="flex-grow text-xs">{platform?.name}</div>}
-
-      <div
-        aria-label="category"
-        className="w-fit rounded border border-slate-800 px-1 font-mono text-xs font-black uppercase text-slate-800"
-        style={{ backgroundColor: category?.color }}
-      >
-        {category?.name}
-      </div>
+      {categories.map((category) => (
+        <div
+          key={category.slug}
+          aria-label="category"
+          className="w-fit rounded border border-slate-800 px-1 font-mono text-xs font-black uppercase text-slate-800"
+          style={{ backgroundColor: category?.color }}
+        >
+          {category?.name}
+        </div>
+      ))}
     </div>
   );
 }

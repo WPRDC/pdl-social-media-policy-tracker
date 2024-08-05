@@ -32,7 +32,7 @@ export interface TrackerRecord {
   summary: string;
   details: string;
   date: string;
-  category: Category;
+  categories: Category[];
   platform: Platform;
   citations: string[];
 }

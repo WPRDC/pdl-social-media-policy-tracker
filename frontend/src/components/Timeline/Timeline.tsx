@@ -53,7 +53,11 @@ export function Timeline({
   function filterRecords(records: TrackerRecord[]) {
     return records
       .filter((r) => selectedPlatforms.has(r.platform.slug))
-      .filter((r) => selectedCategories.has(r.category.slug));
+      .filter(
+        (r) =>
+          selectedCategories.intersect(Set(r.categories.map((c) => c.slug)))
+            .size > 0,
+      );
   }
 
   const timeline = useMemo(() => {

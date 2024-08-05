@@ -48,7 +48,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class RecordSerializer(serializers.ModelSerializer):
-    category = CategorySerializer()
+    categories = CategorySerializer(many=True)
     platform = PlatformSerializer()
     citations = serializers.SerializerMethodField()
 
@@ -58,7 +58,7 @@ class RecordSerializer(serializers.ModelSerializer):
             "id",
             "summary",
             "date",
-            "category",
+            "categories",
             "details",
             "platform",
             "citations",
