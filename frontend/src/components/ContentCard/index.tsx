@@ -52,12 +52,12 @@ export function ContentCard({ record, split }: ContentCardProps): ReactElement {
             <h4 className="leading-nonw mb-4 px-4 pt-2 font-sans text-lg font-semibold lg:text-xl">
               {record.summary}
             </h4>
-            <Heading {...record} />
+            <Heading {...record} split={split} />
           </div>
 
           {/* Citations */}
           <div className="px-4">
-            <div className="mt-2 flex items-center font-mono text-sm font-bold uppercase text-stone-600">
+            <div className="mt-2 flex items-center font-mono text-sm font-bold uppercase text-stone-800">
               Sources:
             </div>
             <ul className="list-inside list-disc pl-2">
@@ -111,13 +111,11 @@ export function ContentCard({ record, split }: ContentCardProps): ReactElement {
             </div>
             {!!record.details && (
               <details className="group mb-4 hidden lg:block">
-                <summary className="mt-4 cursor-pointer py-2 font-mono font-bold uppercase leading-tight text-stone-600 underline decoration-2 hover:text-black lg:block lg:py-0 lg:text-sm">
+                <summary className="mt-4 cursor-pointer py-2 font-mono font-bold uppercase leading-tight text-stone-800 underline decoration-2 hover:text-stone-600 lg:block lg:py-0 lg:text-sm">
                   <span className="hidden group-open:inline">Hide</span>
                   <span className="inline group-open:hidden">Show</span>
 
                   <span> Details</span>
-                  <BiChevronDown className="inline size-4 group-open:hidden" />
-                  <BiChevronUp className="hidden size-4 group-open:inline" />
                 </summary>
                 <ParsedHTML className="pb-1 text-base font-medium leading-relaxed">
                   {record.details}

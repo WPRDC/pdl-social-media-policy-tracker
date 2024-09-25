@@ -46,6 +46,7 @@ export function TimelineItem({ date, records, position }: TimelineItemProps) {
             ))}
           </section>
         )}
+
         {/* Empty message */}
         {(!records || !records.length) && !position && (
           <div className="flex h-12 items-center md:h-16 ">

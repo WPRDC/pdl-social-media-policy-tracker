@@ -7,19 +7,22 @@ export default async function About() {
   const sectionStyle = tw`pt-6 first:pt-0`;
   const headingStyle = tw`pb-2 font-display text-2xl font-bold after:content-[':'] lg:text-3xl`;
   const paragraphStyle = tw`pb-3 font-sans leading-relaxed lg:text-lg`;
-  const listStyle = "pl-4 lg:text-lg";
-  const listItemStyle = "pb-3 leading-relaxed list-disc";
+  const listStyle = tw`pl-7 lg:text-lg`;
+  const orderedListItemStyle = tw`list-decimal pb-3 leading-relaxed`;
+  const listItemStyle = tw`list-disc pb-3 leading-relaxed`;
   const tocItemStyle = tw`mb-1`;
   const tocLinkStyle = tw``;
+
+  const subtitleStyle = tw`my-2 w-fit rounded pb-2 text-xl font-bold italic  text-royal lg:text-2xl`;
 
   const { lastUpdated } = await requestLastUpdated();
 
   return (
-    <div className="my-6 px-3 pb-20">
+    <div className="h-full w-full flex-grow px-3 pb-20 pt-16 lg:relative lg:overflow-auto">
       <div className="mx-auto max-w-screen-lg font-medium">
         <div className="lg:flex lg:flex-row-reverse">
           <div className="mb-2 h-fit border-black p-4 text-sm lg:mb-0 lg:w-1/4 lg:border">
-            <nav aria-label="Page navigation">
+            <nav aria-label="table of contents">
               <h2 className="mb-1 font-display text-base font-bold">
                 On this page:
               </h2>
@@ -55,174 +58,361 @@ export default async function About() {
 
           <main className="lg:w-3/4 lg:pr-6">
             <div id="overview" className={sectionStyle}>
-              <h2 className={headingStyle}>Tracker Overview & Objectives</h2>
-              <div className="my-2 w-fit rounded pb-2 text-xl font-bold italic  text-royal lg:text-2xl">
-                Tracking the Evolution of Social Media Companies&rsquo; Election
-                Integrity Policies
-              </div>
+              <hgroup>
+                <h2 className={headingStyle}>Introduction</h2>
+                <p className={subtitleStyle}>
+                  What is the Social Media Election Policy Tracker?
+                </p>
+              </hgroup>
+
               <p className={paragraphStyle}>
-                Presented here is a timeline of social media companies’ evolving
-                policies and reported actions that impact the information
-                environment related to U.S. elections and campaigns.
+                The Social Media Election Policy Tracker is a tool created to
+                broadly chronicle a timeline of selected social media companies’
+                evolving policies which have an impacted the information
+                environment related to U.S. elections and campaigns from 2016 –
+                the present.
               </p>
               <p className={paragraphStyle}>
-                In the aftermath of evidence of foreign disinformation campaigns
-                during the 2016 U.S. Presidential election, social media
-                companies looked to mitigate Congressional concern and stave off
-                regulation. Companies responded with a series of new content
-                moderation policies and design changes during the 2018 midterms
-                and 2020 Presidential elections, although those efforts were
-                increasingly accompanied by{" "}
-                <a href="https://www.washingtonpost.com/technology/2022/10/09/social-media-content-moderation/">
-                  charges
-                </a>{" "}
-                of political bias. Large and small platforms played{" "}
-                <a href="https://www.npr.org/2023/01/26/1151360750/social-medias-role-in-jan-6-was-left-out-of-the-final-report">
-                  host to
-                </a>{" "}
-                the spread of the ‘Stop the Steal’ conspiracy, but in the
-                immediate aftermath of January 6, 2021, the big players acted
-                decisively to limit stolen election content. Following the 2022
-                midterm election cycle, researchers and media have raised{" "}
-                <a href="https://www.washingtonpost.com/technology/2023/08/25/political-conspiracies-facebook-youtube-elon-musk/">
-                  concerns
-                </a>{" "}
-                that social media companies are{" "}
-                <a href="https://www.washingtonpost.com/technology/2023/08/25/political-conspiracies-facebook-youtube-elon-musk/">
-                  stepping back
-                </a>{" "}
-                from earlier useful – if imperfect –policies and are
-                understaffing the teams intended to combat election interference
-                and mis and disinformation.
+                For the sake of this project,{" "}
+                <strong>
+                  we define <dfn>election policies</dfn> as the rules,
+                  guidelines, and other actions social media platforms have
+                  established to manage the use of their services during
+                  election cycles and to information related to elections.
+                </strong>{" "}
+                This encompasses a wide range of issues related to the electoral
+                process. Examples of these efforts include those aimed at
+                promoting voter registration, providing accurate election
+                information, combating foreign election interference, mitigating
+                the spread of false or misleading information about elections,
+                and other policies surrounding political advertising. Our scope
+                also extends beyond formal policies to include internal changes
+                made by social media companies that directly impact election
+                information environments. Examples of these changes are
+                adjustments to election integrity team staffing and the
+                implementation of specialized tools like AI-generation labels
+                for synthetic election-related content.
               </p>
               <p className={paragraphStyle}>
-                In this tracker, we attempt to ground these observations by
-                chronicling specific policy changes, platform design choices,
-                and key decisions and events as they relate to election
-                information and campaigns. As we head into the 2024 election
-                cycle in the United States, we can expect continued and perhaps
-                consequential changes to platforms’ approaches. Some of these
-                policies are US-focused, others more widely applicable during a
-                year in which nearly{" "}
-                <a href="https://time.com/6550920/world-elections-2024/">
-                  half of the world
-                </a>{" "}
-                will hold national elections.
-              </p>
-              <p className={paragraphStyle}>
-                We note that an external understanding of ‘how the sausage is
-                made’ concerning companies’ approach to elections is incomplete,
-                at best. The public must rely upon corporate press releases and
-                messaging, with its inevitable spin. In particular, we have very
-                little visibility into whether some efforts announced with
-                fanfare and logged here are ongoing. While media reporting and
-                independent research yield additional data, the fact remains
-                that we are all operating with imperfect information,
-                emphasizing, yet again, the need for transparency from these
-                companies with outsize influence over what information people
-                are and are not exposed to.
+                The Tracker allows you to explore, compare, and filter through
+                different categories of election policies over time by social
+                media platform. We believe this will be especially helpful for
+                journalists and researchers looking to understand trends and
+                patterns regarding how social media companies have adapted their
+                policies and actions in response to evolving pressures and
+                challenges over time.
               </p>
             </div>
 
             <div className={sectionStyle}>
-              <h2 className={headingStyle}>Tracker Parameters</h2>
-              <p className={paragraphStyle}>
-                <strong>Platforms</strong>: The tracker includes the biggest
-                social media platforms as measured by users – Facebook/Instagram
-                (grouped together as they generally share content moderation
-                policies), Threads (separate from other Meta platforms owing to
-                a divergent approach to content moderation at the time of
-                launch), X/Twitter, TikTok and YouTube. We’ve also included
-                several smaller platforms that have gained influence with users
-                seeking a more hands-off approach to content moderation: Parler,
-                Gab, Discourse. Finally, we have included encrypted messaging
-                apps Telegram and WhatsApp.
+              <hgroup>
+                <h2 className={headingStyle}>Context</h2>
+              </hgroup>
+              <p className={subtitleStyle}>
+                Why Did We Make the Social Media Election Policy Tracker?{" "}
               </p>
+
               <p className={paragraphStyle}>
-                <strong>Timing</strong>: The history of tech companies and
-                elections{" "}
-                <a href="https://bipartisanpolicy.org/report/history-tech-elections/">
-                  goes back decades
+                Tracking the evolutions and developments in social media
+                election policies over time is a valuable tool for understanding
+                how these platforms&apos; actions align with major news, social
+                shifts, and political events. The foreign influence attempts
+                with respect to the{" "}
+                <a
+                  href="https://www.intelligence.senate.gov/press/senate-intel-committee-releases-bipartisan-report-russia%E2%80%99s-use-social-media"
+                  target="_blank"
+                >
+                  2016 US presidential election
                 </a>{" "}
-                – however, we begin our timeline in 2016, the year Americans had
-                a collective realization that social media – through
-                misinformation, foreign interference and candidates’ use of the
-                platforms – could have a decisive impact on electoral outcomes.
-                We intend to update this tracker monthly.
+                served as a wakeup call regarding the power social media
+                companies have over the information, news, and advertisements
+                people see or don’t see, which have the potential to affect
+                their voting behavior. Our tracker begins at this moment when
+                social media companies first started facing wide-spread pressure
+                from{" "}
+                <a
+                  href="https://www.govinfo.gov/content/pkg/CHRG-115shrg27398/pdf/CHRG-115shrg27398.pdf"
+                  target="_blank"
+                >
+                  Congress
+                </a>{" "}
+                and their{" "}
+                <a
+                  href="https://www.theguardian.com/technology/2016/dec/12/facebook-2016-problems-fake-news-censorship"
+                  target="_blank"
+                >
+                  users
+                </a>{" "}
+                to address these issues. Companies responded with efforts to
+                <a
+                  href="https://journals.sagepub.com/doi/full/10.1177/1461444821989352"
+                  target="_blank"
+                >
+                  self-regulate
+                </a>{" "}
+                via a series of content moderation policies and platform changes
+                during the 2018 midterms and 2020 elections, which are
+                documented in this Tracker.
               </p>
               <p className={paragraphStyle}>
-                <strong>Geography</strong>: This tracker primarily focuses on
-                U.S. election-related policies and actions, though some broadly
-                apply.
+                Despite the changes, social media platforms were hotbeds of
+                <a href="" target="_blank">
+                  false information
+                </a>{" "}
+                regarding the 2020 elections, including the{" "}
+                <a href="" target="_blank">
+                  “Stop the Steal”
+                </a>{" "}
+                conspiracy theories of voter fraud. Such discord spilled into
+                real-life violence on January 6, 2021, during the{" "}
+                <a href="" target="_blank">
+                  U.S. Capitol riots
+                </a>
+                . Some platforms decided to limit content in the immediate
+                aftermath of the attacks. Others did not.
+              </p>
+              <p className={paragraphStyle}>
+                Social media platforms have faced a backlash for their
+                decisions, caught between accusations of censorship,{" "}
+                <a
+                  href="https://www.theguardian.com/media/2023/dec/07/2024-elections-social-media-content-safety-policies-moderation"
+                  target="_blank"
+                >
+                  bias
+                </a>
+                , and political motivations for policies on the one hand, and
+                concerns that they are{" "}
+                <a
+                  href="https://www.washingtonpost.com/technology/2024/04/21/social-media-trump-biden-politics-instagram-facebook/"
+                  target="_blank"
+                >
+                  stepping back
+                </a>{" "}
+                from earlier useful—if imperfect—
+                <a
+                  href="https://www.theguardian.com/media/2023/dec/07/2024-elections-social-media-content-safety-policies-moderation"
+                  target="_blank"
+                >
+                  efforts
+                </a>{" "}
+                on the other. For instance, critics worry that companies are{" "}
+                <a
+                  href="https://www.theguardian.com/media/2023/dec/07/2024-elections-social-media-content-safety-policies-moderation"
+                  target="_blank"
+                >
+                  understaffing
+                </a>{" "}
+                the teams intended to combat election interference and
+                mis/disinformation. Our work seeks to track the ebbs and flows
+                of these decisions over time.
+              </p>
+              <p className={paragraphStyle}>
+                As we approach the 2024 US election cycle, we anticipate
+                further, potentially significant, changes in how platforms
+                handle election-related content. The Tracker documents these
+                shifts by capturing specific policy changes, strategic platform
+                design choices, and key decisions, alongside other newsworthy
+                events that shape the broader information landscape. While some
+                policies are US-focused, many reflect broader platform
+                strategies with global implications—especially important in a
+                year when nearly{" "}
+                <a href="https://time.com/6550920/world-elections-2024/">
+                  half the world&apos;s
+                </a>{" "}
+                nations will hold national elections. We created the Tracker to
+                support those interested in understanding information
+                landscapes, elections, and the complex relationship between
+                technology companies, platforms, and democratic processes.
               </p>
             </div>
+
             <div className={sectionStyle}>
-              <h2 className={headingStyle}>Methodology</h2>
-              <p className={paragraphStyle}>
-                The data presented in this tracker is drawn from review of
-                social media companies&#39; blog posts, corporate
-                reports/presentations made available to the public,
-                Congressional testimony, date stamped Terms and Conditions, and
-                media coverage. Where possible, we traced evolution in company
-                policies in archived websites (using Wayback Machine), although
-                this was complicated by changing URLs.
+              <hgroup>
+                <h2 className={headingStyle}>Methods</h2>
+              </hgroup>
+              <p className={subtitleStyle}>
+                How Did We Create the Social Media Election Policy Tracker?
               </p>
+              <p className={paragraphStyle}>
+                The data presented in this tracker starts in the wake of the
+                2016 US presidential election and is drawn from review of social
+                media companies&apos; blog posts; corporate reports and
+                presentations made available to the public; Congressional
+                testimony; date stamped Terms and Conditions; and media
+                coverage. Where possible, we traced evolution in company
+                policies in archived websites (using the web archive Wayback
+                Machine), although this was complicated by changing URLs. We
+                anticipate this will continue to happen, showcasing the
+                importance of maintaining this archive of policies.
+              </p>
+              <p className={paragraphStyle}>
+                We chose to include the following social media platforms for
+                several reasons:
+              </p>
+              <ol className={listStyle}>
+                <li className={orderedListItemStyle}>
+                  <strong>Number of Users:</strong> YouTube and Facebook are the
+                  most{" "}
+                  <a href="" target="_blank">
+                    widely used
+                  </a>{" "}
+                  online platforms, followed by Instagram. We group these by
+                  companies, Google being the parent company of YouTube and Meta
+                  being the parent company of Facebook, Instagram, and Threads.
+                </li>
+
+                <li className={orderedListItemStyle}>
+                  <strong>Notoriety and Impact:</strong> Twitter—or X—and TikTok
+                  are lower in users but have been particularly newsworthy given
+                  concerns of{" "}
+                  <a
+                    href="https://www.brookings.edu/articles/the-tiktok-debacle-distinguishing-between-foreign-influence-and-interference/"
+                    target="_blank"
+                  >
+                    foreign influence
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href="https://cepr.org/voxeu/columns/how-twitter-affected-2016-presidential-election"
+                    target="_blank"
+                  >
+                    demonstrable impacts
+                  </a>{" "}
+                  on elections. Some other platforms, such as Pinterest and
+                  LinkedIn, have more users but less impact in this context. We
+                  note, however, that they are also less studied.
+                </li>
+
+                <li className={orderedListItemStyle}>
+                  <strong>Diversity in Sample:</strong> We also include examples
+                  of significantly smaller apps like Gab and Parler that are
+                  advertised and used as{" "}
+                  <a
+                    href="https://www.businessinsider.com/what-is-gab-social-media-platform-free-speech-first-amendment-2021-1"
+                    target="_blank"
+                  >
+                    alternate platforms
+                  </a>{" "}
+                  to the bigger players and widely known as means for
+                  circulating election-related information. They often showcase
+                  a different orientation towards policy than the more widely
+                  adopted platforms and are helpful data points for comparison.
+                </li>
+              </ol>
             </div>
+
             <div className={sectionStyle}>
-              <h2 className={headingStyle}>How to Use the Tracker</h2>
+              <hgroup>
+                <h2 className={headingStyle}>Mechanics</h2>
+                <p className={subtitleStyle}>
+                  How Do I Use the Social Media Election Policy Tracker?
+                </p>
+              </hgroup>
               <p className={paragraphStyle}>
-                At top, you will see three headings:
+                You may choose between different viewing options (the full
+                timeline and a platform comparison timeline) and other
+                policy-type filtering abilities while using the Tracker. For
+                each policy record you will find a title describing the policy,
+                source(s), and expandable details that overview the policy
+                change as per source materials.{" "}
               </p>
+
               <ul className={listStyle}>
                 <li className={listItemStyle}>
-                  <strong>About</strong>: Click this to come back to the this
-                  page, which provides an overview of the timeline’s goals,
-                  methodology and parameters.
+                  <p>
+                    <strong>
+                      <a href="/timeline">Full timeline</a>:
+                    </strong>{" "}
+                    This view will show all selected categories on a single
+                    timeline. Here, you can filter by platform, as well as by
+                    category. Please note, some fall under more than one
+                    category and as such are double tagged. The categories
+                    include:
+                  </p>
+                  <ul className={listStyle}>
+                    <li className={listItemStyle}>
+                      <strong>Content Moderation:</strong> Policies and tools
+                      for addressing misinformation, hate speech, and other
+                      forms of harmful content.
+                    </li>
+
+                    <li className={listItemStyle}>
+                      <strong>Staffing:</strong> Changes in election integrity
+                      teams.
+                    </li>
+
+                    <li className={listItemStyle}>
+                      <strong>Tools:</strong> The creation of a new tool or
+                      assessment technique that has been developed regarding
+                      issues surrounding election information, election
+                      integrity, or political advertising.
+                    </li>
+
+                    <li className={listItemStyle}>
+                      <strong>Election Interference:</strong> Policies and
+                      actions related to combating election interference or
+                      those related to voter suppression.
+                    </li>
+
+                    <li className={listItemStyle}>
+                      <strong>Voting:</strong> Actions aimed at promoting voting
+                      or other general voting issues not related to election
+                      interference.
+                    </li>
+
+                    <li className={listItemStyle}>
+                      <strong>Political Advertising:</strong> Policies and tools
+                      governing political ads.
+                    </li>
+
+                    <li className={listItemStyle}>
+                      <strong>Major Platform Actions:</strong> Platform-wide
+                      changes or decisions regardless of the specific categories
+                      they might affect; meant to capture high-level or
+                      wide-scope platform actions.
+                    </li>
+                  </ul>
                 </li>
                 <li className={listItemStyle}>
                   <strong>
-                    <a
-                      className="font-bold"
-                      href="/social-media-election-policies/timeline"
-                    >
-                      Full timeline
-                    </a>
-                  </strong>
-                  : This view will show all selected categories on a single
-                  timeline. Here, you can filter by platform, as well as by
-                  category. The categories include: Misinformation – policy
-                  &amp; tools; Election interference – policy &amp; tools;
-                  Voting – policy &amp; tools; Political advertising – policy
-                  &amp; tools; Staffing; and Event/Application of policy.
-                </li>
-                <li className={listItemStyle}>
-                  <strong>
-                    <a
-                      className="font-bold"
-                      href="/social-media-election-policies/compare"
-                    >
-                      Comparison timeline
-                    </a>
-                  </strong>
-                  : Here you can view side by side comparisons of up to three
+                    <a href="/compare">Comparison timeline</a>:
+                  </strong>{" "}
+                  Here you can view side by side comparisons of up to three
                   platforms. To change the platforms, click the down arrow next
                   to the platform name. If you wish to add a third platform for
-                  comparison, click the “+Add” button in the upper right.
+                  comparison, click the <code>+Add</code> button in the upper
+                  right.
                 </li>
               </ul>
             </div>
+
             <div className={sectionStyle}>
-              <h2 className={headingStyle}>Additional Considerations</h2>
+              <h2 className={headingStyle}>Limitations and Implications</h2>
+              <p className={subtitleStyle}>
+                What Else Should I Consider When Using the Tracker?
+              </p>
+              <p className={paragraphStyle}>
+                We faced many constraints when compiling the data displayed in
+                this tracker including limitations on finding information,
+                difficult decisions about what to include and exclude, and the
+                quality of the information available to us regarding these
+                policies. Indeed, it is important to understand that many of the
+                decisions in the Tracker were reported and framed by the
+                companies who run the social media platforms, meaning there was
+                a specific rhetorical bent to the release of information.
+              </p>
               <p className={paragraphStyle}>
                 Content moderation policies include a wide range of concerns,
-                often touching on spam, hate speech, memorization, sexual
-                exploitation, bullying and more. Some of these policies –
-                although critical – are outside the domain of elections. Others,
-                such as policies pertaining to fraud, spam, misinformation and
-                inauthentic behavior have variable application to election
-                content. We used our judgment as to what falls within our stated
-                parameters but recognize that inclusion/exclusion of specific
-                policies and events is subject to debate.
+                often touching on spam, hate speech, monetization, sexual
+                exploitation, bullying and more. Some of these policies,
+                although critical, are outside the direct domain of elections;
+                though they can certainly be applied to election-related posts.
+                Others, such as policies pertaining to fraud, spam,
+                misinformation and inauthentic behavior have variable
+                application to election content. We used our judgment as to what
+                falls within our stated parameters but recognize that
+                inclusion/exclusion of specific policies and events is subject
+                to debate.
               </p>
               <p className={paragraphStyle}>
                 One challenge in documentation is the quiet retirement of
@@ -230,8 +420,11 @@ export default async function About() {
                 publicly rolling out new tools and functions aimed at election
                 integrity. However, they are not consistently open and
                 transparent concerning the discontinuation of these tools (there
-                are exceptions, such as Twitter&#39;s{" "}
-                <a href="https://blog.twitter.com/en_us/topics/company/2020/2020-election-update">
+                are exceptions, such as Twitter&apos;s{" "}
+                <a
+                  href="https://blog.x.com/en_us/topics/company/2020/2020-election-update"
+                  target="_blank"
+                >
                   postmortem
                 </a>{" "}
                 of the 2020 election). Unless we found documentation that a tool
@@ -240,15 +433,19 @@ export default async function About() {
                 this assumption will be proven false.
               </p>
               <p className={paragraphStyle}>
-                Noting these constraints and parameters, we recognize that this
+                Noting these constraints and limitations, we recognize that this
                 tracker is not exhaustive. Nonetheless, we have endeavored to
-                create a tracker that is both thorough and focused on how social
-                media giants have evolved their policies towards
-                election-relevant content and integrity.
+                create a resource that is both thorough and focused on how
+                social media giants have evolved their policies towards
+                election-relevant content and integrity.{" "}
               </p>
               <p className={paragraphStyle}>
-                Questions or things we’ve missed? We invite you to reach out to
-                us at <a href="mailto:cyber@pitt.edu">cyber@pitt.edu</a>.
+                We intend to continue to update this tracker monthly.{" "}
+              </p>
+              <p className={paragraphStyle + " font-bold"}>
+                <span className="block">Questions or things we’ve missed?</span>
+                We invite you to reach out to us at{" "}
+                <a href="mailto:cyber@pitt.edu">cyber@pitt.edu</a>.
               </p>
             </div>
           </main>

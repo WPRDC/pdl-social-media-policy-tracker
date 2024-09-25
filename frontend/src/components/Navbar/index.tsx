@@ -20,12 +20,9 @@ export default async function Navbar(): Promise<ReactElement> {
         </a>{" "}
         Project
       </p>
-      <nav
-        aria-label="primary navigation"
-        className="mx-auto max-w-screen-xl flex-col-reverse justify-between md:flex-row md:items-center"
-      >
+      <div className="mx-auto max-w-screen-xl flex-col-reverse justify-between md:flex-row md:items-center">
         <NavMenu />
-      </nav>
+      </div>
     </header>
   );
 }

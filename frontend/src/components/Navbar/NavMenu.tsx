@@ -7,7 +7,7 @@ export default function NavMenu(): ReactElement {
       <li className="sr-only"></li>
       <li className="px-5 py-4">
         <Link
-          className="flex items-center font-bold text-slate-800 no-underline hover:text-cyan-600"
+          className="flex items-center font-bold text-slate-800 no-underline hover:text-pittblue"
           href={"/"}
         >
           About
@@ -15,16 +15,16 @@ export default function NavMenu(): ReactElement {
       </li>
       <li className="px-5 py-4">
         <Link
-          className="flex items-center font-bold text-slate-800 no-underline hover:text-cyan-600"
+          className="flex items-center font-bold text-slate-800 no-underline hover:text-pittblue"
           href={"/timeline"}
         >
           <TbGitCommit className="mr-0.5 size-4" />
           <div>Full Timeline</div>
         </Link>
       </li>
-      <li className="px-5 py-4">
+      <li className="hidden px-5 py-4 md:block">
         <Link
-          className="flex items-center font-bold text-slate-800 no-underline hover:text-cyan-600"
+          className="flex items-center font-bold text-slate-800 no-underline hover:text-pittblue"
           href={"/compare"}
         >
           <TbGitCompare className="mr-0.5 size-4" />

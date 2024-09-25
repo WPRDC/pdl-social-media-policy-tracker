@@ -11,23 +11,24 @@ export function Heading({ platform, categories, split }: HeadingProps) {
   return (
     <div
       className={classNames(
-        "items-center rounded-t border-b border-black px-4 py-1 uppercase xl:flex",
-        split && "border-b-0",
+        "items-center rounded-t border-b border-black px-4 py-1 uppercase",
+        split ? "block" : "xl:flex",
       )}
       style={{
-        backgroundColor: split ? "inherit" : platform?.backgroundColor,
-        color: platform?.textColor,
+        backgroundColor: platform?.backgroundColor,
+        // color: platform?.textColor,
       }}
     >
-      {!split && (
-        <p className="flex-grow text-xs font-medium">
-          <span className="sr-only">Platform:</span>
-          {platform?.name}
-        </p>
-      )}
+      <p className="flex-grow text-xs font-medium">
+        <span className="sr-only">Platform:</span>
+        {platform?.name}
+      </p>
       <ul
         aria-label="categories"
-        className="-ml-1 mt-1 h-full items-center leading-none  xl:-mr-1 xl:ml-0 xl:mt-0"
+        className={classNames(
+          "-ml-1 mt-1 h-full items-center leading-none",
+          !split && "xl:-mr-1 xl:ml-0 xl:mt-0",
+        )}
       >
         {categories.map((category) => (
           <li

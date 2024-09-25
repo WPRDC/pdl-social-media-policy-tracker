@@ -8,26 +8,17 @@ import {
   TrackerRecord,
 } from "@/types/model";
 import { TimelineItem } from "@/components/Timeline/TimelineItem";
-import React, { useContext, useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 
 import { Set } from "immutable";
-import { MultiSelect } from "@/components/MultiSelect";
-import { SelectionItem } from "@/components/MultiSelect/SelectionItem";
 import { Switch } from "../Switch";
 import classNames from "classnames";
-import { IoFilter, IoSettings } from "react-icons/io5";
+import { IoFilter } from "react-icons/io5";
 
-import {
-  Button,
-  Dialog,
-  DialogTrigger,
-  Modal,
-  OverlayArrow,
-  OverlayTriggerStateContext,
-  Popover,
-} from "react-aria-components";
+import { Button, Dialog, DialogTrigger, Modal } from "react-aria-components";
 import { BiX } from "react-icons/bi";
-import { TbGitCommit, TbMenu2 } from "react-icons/tb";
+import { TbGitCommit } from "react-icons/tb";
+import { FilterControl } from "@/components/filter-control";
 
 export interface TimelineProps {
   timeline: Timeline;
@@ -50,9 +41,6 @@ export function Timeline({
     Set(categories.map((c) => c.slug)),
   );
   const [showEmpty, setShowEmpty] = useState<boolean>(false);
-  const [showMenu, setShowMenu] = useState(false);
-
-  const menuRef = useRef<HTMLDivElement>(null);
 
   const handleFilterChange =
     (mode: "platforms" | "categories") => (value: string[]) => {
@@ -75,11 +63,6 @@ export function Timeline({
           selectedCategories.intersect(Set(r.categories.map((c) => c.slug)))
             .size > 0,
       );
-  }
-
-  function handleMenuToggle() {
-    setShowMenu(!showMenu);
-    menuRef.current?.focus();
   }
 
   const timeline = useMemo(() => {
@@ -230,58 +213,6 @@ export function Timeline({
         })}
         <TimelineItem position="end" />
       </main>
-    </div>
-  );
-}
-
-interface FilterControlProps {
-  label: string;
-  selected: Set<string>;
-  collection: Named[];
-  onChange: (selection: string[]) => void;
-  className?: string;
-}
-
-function FilterControl({
-  label,
-  selected,
-  collection,
-  onChange,
-  className,
-}: FilterControlProps) {
-  const handleSwitchAll = (on: boolean) => () => {
-    if (on) {
-      onChange(collection.map((item) => item.slug));
-    } else {
-      onChange([]);
-    }
-  };
-
-  return (
-    <div className="mb-2 flex w-full flex-col items-end pb-1">
-      <MultiSelect
-        label={label}
-        value={Array.from(selected)}
-        onChange={onChange}
-        className={className}
-      >
-        {collection.map(({ slug, name }) => (
-          <SelectionItem
-            key={slug}
-            value={slug}
-            onFocusPress={(v) => onChange([v])}
-          >
-            {name.split("–")[0]}
-          </SelectionItem>
-        ))}
-      </MultiSelect>
-      <Button
-        isDisabled={Array.from(selected).length === collection.length}
-        onPress={handleSwitchAll(true)}
-        className="ml-1 rounded-sm border-2 border-black bg-green-50 px-1 py-0.5 font-mono text-xs font-semibold uppercase outline-none hover:shadow-sm focus-visible:border-2 focus-visible:border-pink-500 focus-visible:shadow-sm disabled:hover:shadow-none"
-      >
-        Toggle All On
-      </Button>
     </div>
   );
 }

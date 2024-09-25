@@ -22,6 +22,17 @@ export function PlatformFilter({
         filteredRecords.map((record, i) => (
           <ContentCard key={`${i}`} record={record} split={split} />
         ))}
+
+      {(!filteredRecords || !filteredRecords.length) && (
+        <div className="flex h-12 items-center md:h-32 ">
+          <div className="flex items-center">
+            <div className="text-sm font-medium italic text-gray-700">
+              No activity this month for <b>{platform.name}</b> using the
+              selected filter criteria.
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

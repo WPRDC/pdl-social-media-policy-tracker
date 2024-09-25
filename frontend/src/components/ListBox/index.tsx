@@ -82,9 +82,9 @@ function Option({ item, state }: OptionProps) {
     ref,
   );
 
-  let text = "text-gray-700";
+  let text = "text-stone-700";
   if (isFocused || isSelected) {
-    text = "text-pittblue";
+    text = "text-stone-900 font-semibold";
   } else if (isDisabled) {
     text = "text-gray-200";
   }
@@ -94,17 +94,21 @@ function Option({ item, state }: OptionProps) {
       {...optionProps}
       ref={ref}
       className={classNames(
-        "m-1 flex cursor-default items-center justify-between rounded-md p-2 text-lg font-semibold outline-none",
+        "m-1 flex cursor-default items-center justify-between rounded-md px-2 py-1 font-mono font-semibold outline-none focus-visible:bg-stone-200",
         text,
         {
           "font-bold": isSelected,
         },
       )}
     >
-      {item.rendered}
-      {isSelected && (
-        <HiCheck aria-hidden="true" className="h-5 w-5 text-royal" />
-      )}
+      <div className="truncate">{item.rendered}</div>
+      <div className="flex-srink-0 size-5">
+        {isSelected ? (
+          <HiCheck aria-hidden="true" className="size-5 text-pittblue" />
+        ) : (
+          <div className="size-5"></div>
+        )}
+      </div>
     </li>
   );
 }
