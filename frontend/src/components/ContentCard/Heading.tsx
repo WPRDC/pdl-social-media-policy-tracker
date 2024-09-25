@@ -16,7 +16,7 @@ export function Heading({ platform, categories, split }: HeadingProps) {
       )}
       style={{
         backgroundColor: platform?.backgroundColor,
-        // color: platform?.textColor,
+        color: platform?.textColor,
       }}
     >
       <p className="flex-grow text-xs font-medium">
