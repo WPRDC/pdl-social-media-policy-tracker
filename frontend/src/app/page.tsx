@@ -15,14 +15,14 @@ export default async function About() {
   const { lastUpdated } = await requestLastUpdated();
 
   return (
-    <main className="my-6 px-3 pb-20">
+    <div className="my-6 px-3 pb-20">
       <div className="mx-auto max-w-screen-lg font-medium">
         <div className="lg:flex lg:flex-row-reverse">
           <div className="mb-2 h-fit border-black p-4 text-sm lg:mb-0 lg:w-1/4 lg:border">
-            <div className="mb-1 font-display text-base font-bold">
-              On this page:
-            </div>
-            <nav>
+            <nav aria-label="Page navigation">
+              <h2 className="mb-1 font-display text-base font-bold">
+                On this page:
+              </h2>
               <ol>
                 <li className={tocItemStyle}>
                   <a className={tocLinkStyle} href="#overview">
@@ -53,7 +53,7 @@ export default async function About() {
             </nav>
           </div>
 
-          <div className="lg:w-3/4 lg:pr-6">
+          <main className="lg:w-3/4 lg:pr-6">
             <div id="overview" className={sectionStyle}>
               <h2 className={headingStyle}>Tracker Overview & Objectives</h2>
               <div className="my-2 w-fit rounded pb-2 text-xl font-bold italic  text-royal lg:text-2xl">
@@ -251,9 +251,9 @@ export default async function About() {
                 us at <a href="mailto:cyber@pitt.edu">cyber@pitt.edu</a>.
               </p>
             </div>
-          </div>
+          </main>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

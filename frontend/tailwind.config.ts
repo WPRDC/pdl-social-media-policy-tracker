@@ -24,7 +24,7 @@ const config: Config = {
       boxShadow: {
         "sm-rev": "-2px -2px 0 #4b5563",
         sm: "2px 2px 0 #4b5563",
-        md: "3px 3px 0 #4b5563",
+        // md: "3px 3px 0 #4b5563",
         lg: "8px 8px 0 #4b5563",
         "sm-inner": "inset 2px 2px 0 #4b5563",
         "md-inner": "inset 3px 3px 0 #4b5563",

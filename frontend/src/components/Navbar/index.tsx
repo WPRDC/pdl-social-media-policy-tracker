@@ -1,17 +1,16 @@
 import React, { ReactElement } from "react";
 import NavMenu from "./NavMenu";
 import { requestLastUpdated } from "@/lib/api";
-import Image from "next/image";
 
 export default async function Navbar(): Promise<ReactElement> {
   const { lastUpdated } = await requestLastUpdated();
 
   return (
-    <div className="relative w-full border-b ">
-      <div className="mb-2 mt-8 text-center font-display text-5xl font-bold">
+    <header className="relative z-50 w-full border-b border-zinc-700 bg-white shadow-md">
+      <h1 className="mb-2 mt-8 text-center font-display text-2xl font-extrabold lg:text-5xl">
         Social Media Election Policy Tracker
-      </div>
-      <div className=" text-center italic">
+      </h1>
+      <p className=" text-center italic">
         A{" "}
         <a
           href="https://cyber.pitt.edu"
@@ -20,14 +19,13 @@ export default async function Navbar(): Promise<ReactElement> {
           Pitt Cyber
         </a>{" "}
         Project
-      </div>
-      <div className="mx-auto max-w-screen-xl flex-col-reverse justify-between md:flex-row md:items-center">
+      </p>
+      <nav
+        aria-label="primary navigation"
+        className="mx-auto max-w-screen-xl flex-col-reverse justify-between md:flex-row md:items-center"
+      >
         <NavMenu />
-        {/*<div className="pl-2 pr-2 font-mono text-sm text-zinc-300">*/}
-        {/*  <strong>Last Updated: </strong>{" "}*/}
-        {/*  {new Date(lastUpdated).toLocaleDateString("en-US", {})}*/}
-        {/*</div>*/}
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 }

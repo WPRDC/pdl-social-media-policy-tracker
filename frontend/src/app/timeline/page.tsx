@@ -13,15 +13,13 @@ export default async function TimelineRoute() {
   const { lastUpdated } = await requestLastUpdated();
 
   return (
-    <main className="my-6">
-      <div id="timelines" className="relative flex space-x-2">
-        <Timeline
-          timeline={timeline}
-          platforms={platforms}
-          categories={categories}
-          lastUpdated={lastUpdated}
-        />
-      </div>
-    </main>
+    <div className="h-full w-full flex-grow lg:relative lg:overflow-auto">
+      <Timeline
+        timeline={timeline}
+        platforms={platforms}
+        categories={categories}
+        lastUpdated={lastUpdated}
+      />
+    </div>
   );
 }

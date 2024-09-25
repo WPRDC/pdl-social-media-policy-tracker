@@ -2,7 +2,16 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 
-import { Inconsolata, Noto_Sans, Oswald } from "next/font/google";
+import {
+  Fira_Code,
+  Fira_Mono,
+  Inconsolata,
+  JetBrains_Mono,
+  Noto_Sans,
+  Oswald,
+  Source_Code_Pro,
+  Space_Mono,
+} from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Social Media Election Policies Tracker - Pitt Cyber ",
@@ -21,7 +30,7 @@ const oswald = Oswald({
   variable: "--font-oswald",
 });
 
-const jetbrainsMono = Inconsolata({
+const jetbrainsMono = Source_Code_Pro({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-jetbrains-mono",
@@ -35,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${jetbrainsMono.variable} ${oswald.variable} ${notoSans.variable} flex min-h-screen flex-col bg-white`}
+        className={`${jetbrainsMono.variable} ${oswald.variable} ${notoSans.variable} flex h-screen min-h-screen flex-col bg-slate-100`}
       >
         <Navbar />
         {children}

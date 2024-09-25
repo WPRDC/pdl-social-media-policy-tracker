@@ -1,7 +1,7 @@
 "use client";
 
-import { useFocusRing, useSwitch, VisuallyHidden } from "react-aria";
-import { useRef } from "react";
+import { useFocusRing, useHover, useSwitch, VisuallyHidden } from "react-aria";
+import { useRef, useState } from "react";
 import { AriaSwitchProps } from "@react-types/switch";
 import { useToggleState } from "@/components/client-components";
 
@@ -11,14 +11,20 @@ export function Switch(props: AriaSwitchProps) {
   let { inputProps } = useSwitch(props, state, ref);
   let { isFocusVisible, focusProps } = useFocusRing();
 
+  let { hoverProps, isHovered } = useHover({});
+
   return (
     <label
+      {...hoverProps}
+      className="group cursor-pointer"
       style={{
         display: "flex",
         alignItems: "center",
         opacity: props.isDisabled ? 0.4 : 1,
       }}
     >
+      {props.children}
+
       <VisuallyHidden>
         <input {...inputProps} {...focusProps} ref={ref} />
       </VisuallyHidden>
@@ -26,17 +32,18 @@ export function Switch(props: AriaSwitchProps) {
         <rect
           x={4}
           y={4}
+          strokeWidth={isHovered ? 2 : 1}
           width={32}
           height={16}
           rx={8}
           stroke="#111827"
-          fill={state.isSelected ? "#67e8f9" : "gray"}
+          fill={state.isSelected ? "#cffafe" : "gray"}
         />
         <circle
           cx={state.isSelected ? 28 : 12}
           cy={12}
           r={5}
-          fill={state.isSelected ? "#155e75" : "white"}
+          fill={state.isSelected ? "#0e7490" : "white"}
         />
         {isFocusVisible && (
           <rect
@@ -51,7 +58,6 @@ export function Switch(props: AriaSwitchProps) {
           />
         )}
       </svg>
-      {props.children}
     </label>
   );
 }

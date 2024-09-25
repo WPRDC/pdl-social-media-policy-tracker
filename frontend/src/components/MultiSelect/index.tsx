@@ -18,11 +18,11 @@ export function MultiSelect(props: MultiSelectProps) {
     <div {...groupProps} className={className}>
       <div
         {...labelProps}
-        className="pb-1 text-xs font-bold uppercase text-slate-900"
+        className="pb-1 text-xs font-bold uppercase text-zinc-800"
       >
         {label}
       </div>
-      <div className="grid gap-1 px-1">
+      <div className="grid gap-1 pb-1.5">
         <CheckboxGroupContext.Provider value={state}>
           {children}
         </CheckboxGroupContext.Provider>

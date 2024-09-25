@@ -1,8 +1,7 @@
 "use client";
 
 import { TrackerRecord } from "@/types/model";
-import { ReactElement } from "react";
-import { Body } from "@/components/ContentCard/Body";
+import React, { ReactElement } from "react";
 import { Heading } from "./Heading";
 import { GiEvilBook } from "react-icons/gi";
 import {
@@ -16,6 +15,11 @@ import {
   SiYoutube,
 } from "react-icons/si";
 import { IconType } from "react-icons/lib";
+import { Button, Dialog, DialogTrigger, Modal } from "react-aria-components";
+import { ParsedHTML } from "@/components/ParsedHTML";
+import { BiChevronDown, BiChevronUp, BiX } from "react-icons/bi";
+import Link from "next/link";
+import { TbExternalLink } from "react-icons/tb";
 
 export interface ContentCardProps {
   record?: TrackerRecord;
@@ -32,23 +36,101 @@ export function ContentCard({ record, split }: ContentCardProps): ReactElement {
   });
 
   return (
-    <div className="relative w-full flex-shrink-0 py-1">
-      {!!record && (
-        <div className="relative my-3 rounded-md border-2 border-slate-600 bg-slate-100">
-          <Heading {...record} />
-          <Body {...record} />
-          <div className="absolute bottom-2 right-2 font-mono text-xs font-semibold uppercase">
-            {dateStr}
-          </div>
-        </div>
-      )}
+    <div className="relative mt-3 w-full">
       {!split && (
-        <div className="absolute -left-12 top-0 flex h-full items-center">
-          <div className="flex size-8 items-center justify-center rounded-full border-2 border-black bg-white">
-            <Icon />
+        <div className="absolute -left-11 top-0 flex h-full items-center md:-left-12">
+          <div className="flex size-8 items-center justify-center rounded-full border-2 border-slate-600 bg-white">
+            <Icon aria-hidden />
           </div>
         </div>
       )}
+
+      {!!record && (
+        <article className="relative mb-4 rounded-md border-2 border-slate-600 bg-white">
+          <div className="flex flex-col-reverse">
+            {/* Summary */}
+            <h4 className="leading-nonw mb-4 px-4 pt-2 font-sans text-lg font-semibold lg:text-xl">
+              {record.summary}
+            </h4>
+            <Heading {...record} />
+          </div>
+
+          {/* Citations */}
+          <div className="px-4">
+            <div className="mt-2 flex items-center font-mono text-sm font-bold uppercase text-stone-600">
+              Sources:
+            </div>
+            <ul className="list-inside list-disc pl-2">
+              {record.citations.map((citation) => (
+                <li className="overflow-x-auto" key={citation}>
+                  <Link
+                    href={citation}
+                    target="_blank"
+                    className="-ml-1.5 inline-flex w-fit text-sm text-blue-800 underline hover:text-blue-500"
+                  >
+                    <span>{new URL(citation).hostname}</span>
+                    <TbExternalLink />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Details */}
+          <div className="px-4">
+            <div className="lg:hidden">
+              <DialogTrigger>
+                <Button className="mb-2 mt-4 rounded-sm border-2 border-black bg-cyan-200 px-1 font-mono text-sm font-bold uppercase">
+                  See Details
+                </Button>
+                <Modal className="px-8 py-16" isDismissable>
+                  <Dialog className=" h-full rounded-md border-2 border-black bg-white p-8">
+                    {({ close }) => (
+                      <div className="">
+                        <div className="overflow-auto">
+                          {!!record.details && (
+                            <ParsedHTML className="text-sm font-medium leading-relaxed">
+                              {record.details}
+                            </ParsedHTML>
+                          )}
+                        </div>
+                        <div className="mt-4 flex justify-end border-t pt-4">
+                          <Button
+                            onPress={close}
+                            className="flex items-center rounded-sm border-2 border-black pr-1 text-sm font-bold uppercase "
+                          >
+                            <BiX className="size-5" />
+                            <div>Close</div>
+                          </Button>
+                        </div>
+                      </div>
+                    )}
+                  </Dialog>
+                </Modal>
+              </DialogTrigger>
+            </div>
+            {!!record.details && (
+              <details className="group mb-4 hidden lg:block">
+                <summary className="mt-4 cursor-pointer py-2 font-mono font-bold uppercase leading-tight text-stone-600 underline decoration-2 hover:text-black lg:block lg:py-0 lg:text-sm">
+                  <span className="hidden group-open:inline">Hide</span>
+                  <span className="inline group-open:hidden">Show</span>
+
+                  <span> Details</span>
+                  <BiChevronDown className="inline size-4 group-open:hidden" />
+                  <BiChevronUp className="hidden size-4 group-open:inline" />
+                </summary>
+                <ParsedHTML className="pb-1 text-base font-medium leading-relaxed">
+                  {record.details}
+                </ParsedHTML>
+              </details>
+            )}
+          </div>
+        </article>
+      )}
+
+      {/*<div className="absolute bottom-4 right-4 font-mono text-xs font-semibold uppercase text-zinc-500 lg:bottom-2">*/}
+      {/*  {dateStr}*/}
+      {/*</div>*/}
     </div>
   );
 }

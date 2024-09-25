@@ -6,8 +6,11 @@ import { CheckboxGroupContext } from "./util";
 import { CheckboxGroupState } from "@react-stately/checkbox";
 import classNames from "classnames";
 import { BiCheck, BiX } from "react-icons/bi";
+import { Button } from "react-aria-components";
 
-export interface SelectionItemProps extends AriaCheckboxGroupItemProps {}
+export interface SelectionItemProps extends AriaCheckboxGroupItemProps {
+  onFocusPress: (v: string) => void;
+}
 
 function getDisabledStatus(
   state: CheckboxGroupState,
@@ -30,37 +33,49 @@ export function SelectionItem(props: SelectionItemProps) {
   const { focusProps, isFocusVisible } = useFocusRing();
 
   return (
-    <div
-      className={classNames(
-        "inline-block cursor-pointer items-center rounded border-2 border-black font-mono text-xs font-bold last-of-type:m-0 hover:shadow-sm active:shadow-sm-inner",
-        isSelected ? "bg-cyan-300" : "bg-none",
-        isDisabled && "bg-gray-300",
-        isFocusVisible ? "border-pink-500 shadow-sm" : "border-black",
-      )}
-    >
+    <div className="flex w-full items-center font-mono  text-xs font-semibold uppercase">
       <label
         className={classNames(
-          "block cursor-pointer px-1 py-0.5",
-          isDisabled && "cursor-not-allowed",
+          "flex w-full items-center rounded-sm border-2 px-1 py-0.5 ",
+          isDisabled
+            ? "cursor-default hover:shadow-none"
+            : "cursor-pointer hover:shadow-sm",
+          isSelected ? "bg-cyan-100" : "bg-white",
+          isFocusVisible ? "border-pink-500 shadow-sm" : "border-black",
         )}
       >
+        <div className="pr-0.5" aria-hidden>
+          {isSelected ? (
+            <BiCheck className="size-4" />
+          ) : (
+            <BiX className="size-4" />
+          )}
+        </div>
+
+        <div
+          className={classNames("flex-grow truncate")}
+          title={children ? String(children) : undefined}
+        >
+          {children}
+        </div>
+
         <input
           {...mergeProps(inputProps, focusProps)}
           ref={ref}
           className="sr-only"
           disabled={isDisabled}
         />
-        <div className="flex items-center space-x-0.5">
-          <div>
-            {isSelected ? (
-              <BiCheck className="size-3" />
-            ) : (
-              <BiX className="size-3" />
-            )}
-          </div>
-          <div>{children}</div>
-        </div>
       </label>
+
+      <Button
+        className={classNames(
+          "ml-1 rounded-sm border-2 border-black px-1 font-mono text-xs uppercase outline-none",
+          "py-0.5 hover:shadow-sm focus-visible:border-pink-500 focus-visible:shadow-sm",
+        )}
+        onPress={() => props.onFocusPress(props.value)}
+      >
+        Focus
+      </Button>
     </div>
   );
 }

@@ -12,6 +12,7 @@ export function TimePointMarker({
   return (
     /* container */
     <div
+      aria-hidden
       className={classNames(
         "relative flex w-10 flex-shrink-0 pr-4 md:w-12",
         !position && "items-center",

@@ -15,24 +15,40 @@ export interface TimelineItemProps {
 
 export function TimelineItem({ date, records, position }: TimelineItemProps) {
   return (
-    <div className="flex w-full items-stretch px-1" id={asID(date ?? "")}>
-      <DateMarker date={date} position={position} />
-      <TimePointMarker position={position} />
+    <article className="flex w-full items-stretch px-1" id={asID(date ?? "")}>
+      {/* Big screen date marker - also header*/}
+      <DateMarker
+        date={date}
+        position={position}
+        className="hidden py-6 pr-2 text-right md:block"
+      />
+      <TimePointMarker position={position} aria-hidden />
 
       {/* Cards */}
       <div
         className={classNames(
-          "w-full border-black py-4",
+          "w-full border-black md:py-4",
           position !== "start" && "border-t",
         )}
       >
-        {records &&
-          !!records.length &&
-          records.map((record, i) => (
-            <ContentCard key={`${i}`} record={record} />
-          ))}
+        {/* Small screen date marker - also header*/}
+        <DateMarker
+          date={date}
+          position={position}
+          className="my-0 block w-full border-none p-0 pt-3 md:hidden"
+        />
+
+        {/* Policy cards*/}
+        {records && !!records.length && (
+          <section aria-label={`policy changes`}>
+            {records.map((record, i) => (
+              <ContentCard key={`${i}`} record={record} />
+            ))}
+          </section>
+        )}
+        {/* Empty message */}
         {(!records || !records.length) && !position && (
-          <div className="flex h-16 items-center ">
+          <div className="flex h-12 items-center md:h-16 ">
             <div className="flex items-center">
               <div className="text-sm font-medium italic text-gray-700">
                 No activity this month for the selected filter criteria.
@@ -41,6 +57,6 @@ export function TimelineItem({ date, records, position }: TimelineItemProps) {
           </div>
         )}
       </div>
-    </div>
+    </article>
   );
 }

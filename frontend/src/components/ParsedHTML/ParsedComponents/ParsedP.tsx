@@ -10,7 +10,7 @@ export function ParsedP(props: ParserProps) {
   return (
     <p
       {...attribs}
-      className={classNames("my-1 text-justify", props.className)}
+      className={classNames("my-1  md:text-justify", props.className)}
     >
       {domToReact(props.children, { replace: replacer })}
     </p>

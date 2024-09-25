@@ -5,32 +5,51 @@ import { Position } from "@/types/ui";
 export interface DateMarkerProps {
   date?: string;
   position?: Position;
+  className?: string;
 }
 
-export function DateMarker({ date, position }: DateMarkerProps): ReactElement {
+export function DateMarker({
+  date,
+  position,
+  className,
+}: DateMarkerProps): ReactElement {
   function getPositionText(position?: Position) {
     if (!position) return "";
     return position === "start" ? "Today" : "";
   }
 
-  const content = date
-    ? new Date(date).toLocaleDateString("en-US", {
-        month: "short",
-        year: "numeric",
-        timeZone: "UTC",
-      })
-    : getPositionText(position);
+  const [month, year] = date
+    ? new Date(date)
+        .toLocaleDateString("en-US", {
+          month: "short",
+          year: "numeric",
+          timeZone: "UTC",
+        })
+        .split(" ")
+    : [undefined, undefined];
+
+  const positionText = position ? getPositionText(position) : undefined;
 
   return (
     <div
       className={classNames(
-        "flex w-16 flex-shrink-0 flex-col justify-between py-2 md:w-28 lg:w-32",
+        "flex-shrink-0",
         position !== "start" && "border-t border-black",
+        position === "start" && "-mt-3 pb-3 md:-mt-1.5 lg:py-0 ",
+        className,
       )}
     >
-      <div className="relative w-full px-4 text-right font-mono font-black uppercase md:text-xl lg:text-2xl">
-        <div className={classNames(!position && "sticky pt-6")}>{content}</div>
-      </div>
+      <h3 className="w-24 font-mono text-xl font-black uppercase leading-none lg:text-2xl">
+        {month && (
+          <>
+            {month}
+            <br />
+            {year}
+          </>
+        )}
+
+        {positionText}
+      </h3>
     </div>
   );
 }
