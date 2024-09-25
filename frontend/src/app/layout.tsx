@@ -42,9 +42,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="w-full">
       <body
-        className={`${jetbrainsMono.variable} ${oswald.variable} ${notoSans.variable} flex h-screen min-h-screen flex-col bg-slate-100`}
+        className={`${jetbrainsMono.variable} ${oswald.variable} ${notoSans.variable} flex h-screen min-h-screen w-screen flex-col bg-slate-100`}
       >
         <Navbar />
         {children}

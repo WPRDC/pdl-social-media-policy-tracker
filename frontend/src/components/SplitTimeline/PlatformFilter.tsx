@@ -24,9 +24,9 @@ export function PlatformFilter({
         ))}
 
       {(!filteredRecords || !filteredRecords.length) && (
-        <div className="flex h-12 items-center md:h-32 ">
+        <div className="flex min-h-12 items-center md:min-h-32 ">
           <div className="flex items-center">
-            <div className="text-sm font-medium italic text-gray-700">
+            <div className="text-xs font-medium italic text-gray-700 lg:text-sm">
               No activity this month for <b>{platform.name}</b> using the
               selected filter criteria.
             </div>

@@ -28,7 +28,7 @@ export function TimePointMarker({
     /* container */
     <div
       className={classNames(
-        "relative flex w-32 flex-shrink-0 px-5",
+        "relative flex w-20 flex-shrink-0 px-5 lg:w-32",
         !position && "items-center",
       )}
     >
@@ -36,8 +36,8 @@ export function TimePointMarker({
         <div className="flex flex-grow flex-col items-center">
           {/* Date Circle */}
           {!!content && (
-            <div className="absolute z-20 -mt-8 flex size-20 items-center rounded-full border-4 border-stone-800 bg-white">
-              <div className="w-full px-1 text-center font-mono text-lg font-bold uppercase  leading-none text-black">
+            <div className="absolute z-20 -mt-6 flex size-12 items-center rounded-full border-2 border-stone-800 bg-white lg:-mt-8 lg:size-20 lg:border-4">
+              <div className="w-full px-1 text-center font-mono text-xs font-bold uppercase leading-none  text-black lg:text-lg">
                 {content}
               </div>
             </div>

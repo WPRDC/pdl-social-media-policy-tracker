@@ -18,48 +18,54 @@ export default async function About() {
   const { lastUpdated } = await requestLastUpdated();
 
   return (
-    <div className="h-full w-full flex-grow px-3 pb-20 pt-16 lg:relative lg:overflow-auto">
+    <div className="h-full w-full flex-grow overflow-auto px-3 pb-20 lg:relative">
       <div className="mx-auto max-w-screen-lg font-medium">
         <div className="lg:flex lg:flex-row-reverse">
-          <div className="mb-2 h-fit border-black p-4 text-sm lg:mb-0 lg:w-1/4 lg:border">
-            <nav aria-label="table of contents">
-              <h2 className="mb-1 font-display text-base font-bold">
-                On this page:
+          <div className="top-8  mb-8 h-fit border-black pt-2 text-sm lg:sticky lg:mb-0 lg:w-1/4 lg:rounded-md lg:border lg:bg-white lg:p-4 lg:shadow-md">
+            <nav>
+              <h2 className="mb-1 font-mono text-xs font-bold uppercase text-stone-700">
+                On this page
               </h2>
-              <ol>
+              <ol className="mt-2 pl-2">
                 <li className={tocItemStyle}>
-                  <a className={tocLinkStyle} href="#overview">
-                    Tracker Overview & Objectives
+                  <a className={tocLinkStyle} href="#introduction">
+                    Introduction
                   </a>
                 </li>
                 <li className={tocItemStyle}>
-                  <a className={tocLinkStyle} href="#parameters">
-                    Tracker Parameters
+                  <a className={tocLinkStyle} href="#context">
+                    Context
                   </a>
                 </li>
                 <li className={tocItemStyle}>
-                  <a className={tocLinkStyle} href="#methodology">
-                    Methodology
+                  <a className={tocLinkStyle} href="#methods">
+                    Methods
+                  </a>
+                </li>
+
+                <li className={tocItemStyle}>
+                  <a className={tocLinkStyle} href="#mechanics">
+                    Mechanics
                   </a>
                 </li>
                 <li className={tocItemStyle}>
-                  <a className={tocLinkStyle} href="#howto">
-                    How to Use the Tracker
-                  </a>
-                </li>
-                <li className={tocItemStyle}>
-                  <a className={tocLinkStyle} href="#considerations">
-                    Additional Considerations
+                  <a
+                    className={tocLinkStyle}
+                    href="#limitations_and_implications"
+                  >
+                    Limitations and Implications
                   </a>
                 </li>
               </ol>
             </nav>
           </div>
 
-          <main className="lg:w-3/4 lg:pr-6">
+          <main className="lg:w-3/4 lg:pr-6 lg:pt-8">
             <div id="overview" className={sectionStyle}>
               <hgroup>
-                <h2 className={headingStyle}>Introduction</h2>
+                <h2 className={headingStyle} id="introduction">
+                  Introduction
+                </h2>
                 <p className={subtitleStyle}>
                   What is the Social Media Election Policy Tracker?
                 </p>
@@ -106,7 +112,9 @@ export default async function About() {
 
             <div className={sectionStyle}>
               <hgroup>
-                <h2 className={headingStyle}>Context</h2>
+                <h2 className={headingStyle} id="context">
+                  Context
+                </h2>
               </hgroup>
               <p className={subtitleStyle}>
                 Why Did We Make the Social Media Election Policy Tracker?{" "}
@@ -228,7 +236,9 @@ export default async function About() {
 
             <div className={sectionStyle}>
               <hgroup>
-                <h2 className={headingStyle}>Methods</h2>
+                <h2 className={headingStyle} id="methods">
+                  Methods
+                </h2>
               </hgroup>
               <p className={subtitleStyle}>
                 How Did We Create the Social Media Election Policy Tracker?
@@ -303,7 +313,9 @@ export default async function About() {
 
             <div className={sectionStyle}>
               <hgroup>
-                <h2 className={headingStyle}>Mechanics</h2>
+                <h2 className={headingStyle} id="mechanics">
+                  Mechanics
+                </h2>
                 <p className={subtitleStyle}>
                   How Do I Use the Social Media Election Policy Tracker?
                 </p>
@@ -387,7 +399,9 @@ export default async function About() {
             </div>
 
             <div className={sectionStyle}>
-              <h2 className={headingStyle}>Limitations and Implications</h2>
+              <h2 className={headingStyle} id="limitations_and_implications">
+                Limitations and Implications
+              </h2>
               <p className={subtitleStyle}>
                 What Else Should I Consider When Using the Tracker?
               </p>

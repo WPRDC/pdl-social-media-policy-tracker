@@ -39,13 +39,13 @@ export function TimelineItem({
   timelinePlatforms,
 }: TimelineItemProps) {
   return (
-    <div
+    <article
       className={classNames("w-full border-t border-slate-400 px-3", {
         "border-t-0": position === "start",
         "border-b": position === "end",
       })}
     >
-      <div className="mx-auto flex w-full max-w-screen-xl items-stretch">
+      <div className="flex max-w-screen-xl items-stretch lg:mx-auto lg:w-full">
         {timelinePlatforms.map((platform, index) => (
           <>
             {!!index && <TimePointMarker date={date} position={position} />}
@@ -104,7 +104,7 @@ export function TimelineItem({
           </>
         ))}
       </div>
-    </div>
+    </article>
   );
 }
 

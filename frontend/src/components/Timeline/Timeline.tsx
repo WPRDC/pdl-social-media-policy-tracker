@@ -142,7 +142,7 @@ export function Timeline({
 
       <div
         className={classNames(
-          "hidden h-fit max-h-full rounded-md border-2 border-black/70 bg-white p-2 lg:sticky lg:top-5 lg:mt-5 lg:block",
+          "hidden h-fit max-h-full rounded-md border-2 border-black/70 bg-white p-2 shadow-md lg:sticky lg:top-5 lg:mt-5 lg:block",
         )}
       >
         <section id="#timeline-menu" aria-label="filtere controls">
@@ -189,7 +189,7 @@ export function Timeline({
         <div className="flex items-start justify-between md:block">
           <h2 className="mb-1 flex items-center font-mono text-xs font-black uppercase text-zinc-500 lg:text-sm">
             <TbGitCommit className="size-4 lg:size-5" aria-hidden />
-            <div>Timeline</div>
+            <div>Full Timeline</div>
           </h2>
           <div className="mb-5 pl-4 text-xs lg:pl-5">
             <span className="inline-block pr-1 font-mono font-bold uppercase text-zinc-500">

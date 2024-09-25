@@ -41,11 +41,10 @@ export function DateMarker({
     >
       <h3 className="w-24 font-mono text-xl font-black uppercase leading-none lg:text-2xl">
         {month && (
-          <>
-            {month}
-            <br />
-            {year}
-          </>
+          <div role="text">
+            <div className="inline lg:block">{month} </div>
+            <div className="inline lg:block">{year}</div>
+          </div>
         )}
 
         {positionText}

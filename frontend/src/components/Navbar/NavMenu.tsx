@@ -3,9 +3,8 @@ import React, { ReactElement, ReactNode } from "react";
 import { TbGitCommit, TbGitCompare } from "react-icons/tb";
 export default function NavMenu(): ReactElement {
   const menuList: ReactNode = (
-    <ul className="mx-auto flex w-full justify-center text-xs md:text-sm lg:text-base">
-      <li className="sr-only"></li>
-      <li className="px-5 py-4">
+    <ul className="mx-auto mt-2 flex w-full justify-center text-xs md:text-sm lg:mt-0 lg:text-base">
+      <li className="px-2 py-1 lg:px-5 lg:py-4">
         <Link
           className="flex items-center font-bold text-slate-800 no-underline hover:text-pittblue"
           href={"/"}
@@ -13,7 +12,7 @@ export default function NavMenu(): ReactElement {
           About
         </Link>
       </li>
-      <li className="px-5 py-4">
+      <li className="px-2 py-1 lg:px-5 lg:py-4">
         <Link
           className="flex items-center font-bold text-slate-800 no-underline hover:text-pittblue"
           href={"/timeline"}
@@ -22,7 +21,7 @@ export default function NavMenu(): ReactElement {
           <div>Full Timeline</div>
         </Link>
       </li>
-      <li className="hidden px-5 py-4 md:block">
+      <li className="px-2 py-1 lg:px-5 lg:py-4">
         <Link
           className="flex items-center font-bold text-slate-800 no-underline hover:text-pittblue"
           href={"/compare"}
@@ -33,6 +32,7 @@ export default function NavMenu(): ReactElement {
       </li>
     </ul>
   );
+
   return (
     <nav
       aria-label="site navigation"

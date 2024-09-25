@@ -49,26 +49,28 @@ export function ContentCard({ record, split }: ContentCardProps): ReactElement {
         <article className="relative mb-4 rounded-md border-2 border-slate-600 bg-white">
           <div className="flex flex-col-reverse">
             {/* Summary */}
-            <h4 className="leading-nonw mb-4 px-4 pt-2 font-sans text-lg font-semibold lg:text-xl">
+            <h4 className="leading-nonw mb-4 px-2 pt-2 font-sans text-sm font-semibold md:px-4 md:text-base lg:text-lg xl:text-xl">
               {record.summary}
             </h4>
             <Heading {...record} split={split} />
           </div>
 
           {/* Citations */}
-          <div className="px-4">
-            <div className="mt-2 flex items-center font-mono text-sm font-bold uppercase text-stone-800">
+          <div className="px-2 md:px-4">
+            <div className="flex items-center font-mono text-sm font-bold uppercase text-stone-800 lg:mt-2">
               Sources:
             </div>
-            <ul className="list-inside list-disc pl-2">
+            <ul className="list-inside lg:list-disc lg:pl-2">
               {record.citations.map((citation) => (
                 <li className="overflow-x-auto" key={citation}>
                   <Link
                     href={citation}
                     target="_blank"
-                    className="-ml-1.5 inline-flex w-fit text-sm text-blue-800 underline hover:text-blue-500"
+                    className="inline-flex w-fit truncate text-sm text-blue-800 underline hover:text-blue-500 lg:-ml-1.5"
                   >
-                    <span>{new URL(citation).hostname}</span>
+                    <div className="max-w-40 truncate lg:max-w-none ">
+                      {new URL(citation).hostname}
+                    </div>
                     <TbExternalLink />
                   </Link>
                 </li>
@@ -77,7 +79,7 @@ export function ContentCard({ record, split }: ContentCardProps): ReactElement {
           </div>
 
           {/* Details */}
-          <div className="px-4">
+          <div className="px-2 md:px-4">
             <div className="lg:hidden">
               <DialogTrigger>
                 <Button className="mb-2 mt-4 rounded-sm border-2 border-black bg-cyan-200 px-1 font-mono text-sm font-bold uppercase">

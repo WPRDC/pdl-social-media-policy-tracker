@@ -36,7 +36,7 @@ export function Select<T extends object>(props: AriaSelectProps<T>) {
     <div className="relative inline-flex flex-col">
       <div
         {...labelProps}
-        className="block cursor-default text-left text-xs font-medium text-gray-700"
+        className="block cursor-default text-left font-mono text-xs font-semibold uppercase text-gray-700"
       >
         {props.label}
       </div>
@@ -56,7 +56,10 @@ export function Select<T extends object>(props: AriaSelectProps<T>) {
           isFocusVisible && "outline outline-pink-500",
         )}
       >
-        <span {...valueProps} className="font-display text-3xl font-bold">
+        <span
+          {...valueProps}
+          className="truncate font-display text-base font-bold sm:max-w-24 lg:max-w-none lg:text-2xl xl:text-3xl"
+        >
           {state.selectedItem
             ? state.selectedItem.rendered
             : "Select an option"}

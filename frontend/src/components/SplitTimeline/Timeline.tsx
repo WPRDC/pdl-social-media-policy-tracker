@@ -14,15 +14,22 @@ import { Button, Dialog, DialogTrigger, Modal } from "react-aria-components";
 import { IoFilter } from "react-icons/io5";
 import { FilterControl } from "@/components/filter-control";
 import { BiX } from "react-icons/bi";
+import { TbGitCommit } from "react-icons/tb";
 
 export interface TimelineProps {
   timeline: Timeline;
   platforms: Platform[];
   categories: Category[];
   size?: "S" | "M" | "L";
+  lastUpdated: string;
 }
 
-export function Timeline({ timeline, platforms, categories }: TimelineProps) {
+export function Timeline({
+  timeline,
+  platforms,
+  categories,
+  lastUpdated,
+}: TimelineProps) {
   const [timelinePlatforms, setTimelinePlatforms] = useState<Platform[]>([
     platforms[0],
     platforms[2],
@@ -81,13 +88,25 @@ export function Timeline({ timeline, platforms, categories }: TimelineProps) {
   }
 
   return (
-    <div className="w-full">
-      <TimelineItem
-        position="start"
-        platforms={platforms}
-        onPlatformSelect={handlePlatformSelection}
-        timelinePlatforms={timelinePlatforms}
-      />
+    <div className="w-fit lg:mx-auto">
+      <div className="flex w-screen items-start justify-between pl-1 pr-1 pt-4 md:px-0 lg:block lg:w-auto">
+        <h2 className="mb-1 flex items-center font-mono text-xs font-black uppercase text-zinc-500 lg:text-sm">
+          <TbGitCommit className="size-4 lg:size-5" aria-hidden />
+          <div>Comparison Timeline</div>
+        </h2>
+        <div className="mb-5 pl-4 text-xs lg:pl-5">
+          <span className="inline-block pr-1 font-mono font-bold uppercase text-zinc-500">
+            Last Updated:
+          </span>
+          <time
+            dateTime={lastUpdated}
+            className="inline font-mono font-medium text-zinc-500"
+          >
+            {new Date(lastUpdated).toLocaleDateString("en-US", {})}
+          </time>
+        </div>
+      </div>
+
       <DialogTrigger>
         <Button
           aria-label="Show timeline settings menu"
@@ -123,20 +142,28 @@ export function Timeline({ timeline, platforms, categories }: TimelineProps) {
           </Dialog>
         </Modal>
       </DialogTrigger>
-      {Object.entries(timeline).map(([date, records]) => {
-        const filteredRecords = filterRecords(records);
-        if (!!filteredRecords)
-          return (
-            <TimelineItem
-              key={date}
-              date={date}
-              records={filteredRecords}
-              platforms={platforms}
-              timelinePlatforms={timelinePlatforms}
-              onPlatformSelect={handlePlatformSelection}
-            />
-          );
-      })}
+      <main>
+        <TimelineItem
+          position="start"
+          platforms={platforms}
+          onPlatformSelect={handlePlatformSelection}
+          timelinePlatforms={timelinePlatforms}
+        />
+        {Object.entries(timeline).map(([date, records]) => {
+          const filteredRecords = filterRecords(records);
+          if (!!filteredRecords)
+            return (
+              <TimelineItem
+                key={date}
+                date={date}
+                records={filteredRecords}
+                platforms={platforms}
+                timelinePlatforms={timelinePlatforms}
+                onPlatformSelect={handlePlatformSelection}
+              />
+            );
+        })}
+      </main>
     </div>
   );
 }
