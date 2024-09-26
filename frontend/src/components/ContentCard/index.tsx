@@ -127,10 +127,6 @@ export function ContentCard({ record, split }: ContentCardProps): ReactElement {
           </div>
         </article>
       )}
-
-      {/*<div className="absolute bottom-4 right-4 font-mono text-xs font-semibold uppercase text-zinc-500 lg:bottom-2">*/}
-      {/*  {dateStr}*/}
-      {/*</div>*/}
     </div>
   );
 }

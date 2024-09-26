@@ -38,8 +38,10 @@ export function TimelineItem({
   onPlatformSelect,
   timelinePlatforms,
 }: TimelineItemProps) {
+  const Wrapper = position === "start" ? "div" : "article";
+
   return (
-    <article
+    <Wrapper
       className={classNames("w-full border-t border-slate-400 px-3", {
         "border-t-0": position === "start",
         "border-b": position === "end",
@@ -104,7 +106,7 @@ export function TimelineItem({
           </>
         ))}
       </div>
-    </article>
+    </Wrapper>
   );
 }
 

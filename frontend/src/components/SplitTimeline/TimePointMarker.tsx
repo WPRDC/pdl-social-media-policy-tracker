@@ -16,13 +16,15 @@ export function TimePointMarker({
   position,
   date,
 }: TimePointMarkerProps): ReactElement | null {
-  const content = date
-    ? new Date(date).toLocaleDateString("en-US", {
-        month: "short",
-        year: "numeric",
-        timeZone: "UTC",
-      })
-    : getPositionText(position);
+  const [month, year] = date
+    ? new Date(date)
+        .toLocaleDateString("en-US", {
+          month: "short",
+          year: "numeric",
+          timeZone: "UTC",
+        })
+        .split(" ")
+    : [undefined, undefined];
 
   return (
     /* container */
@@ -35,11 +37,12 @@ export function TimePointMarker({
       {!position && (
         <div className="flex flex-grow flex-col items-center">
           {/* Date Circle */}
-          {!!content && (
-            <div className="absolute z-20 -mt-6 flex size-12 items-center rounded-full border-2 border-stone-800 bg-white lg:-mt-8 lg:size-20 lg:border-4">
-              <div className="w-full px-1 text-center font-mono text-xs font-bold uppercase leading-none  text-black lg:text-lg">
-                {content}
-              </div>
+          {!!month && (
+            <div className="absolute z-20 -mt-6 flex size-12 items-center rounded-full border-2 border-stone-800 bg-white lg:-mt-8 lg:size-16 lg:border-4">
+              <h3 className="w-full px-1 text-center font-mono text-xs font-bold uppercase text-black lg:pb-1 lg:text-lg">
+                <div className="leading-none">{month} </div>
+                <div className="leading-none">{year}</div>
+              </h3>
             </div>
           )}
           {/* line */}

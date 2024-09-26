@@ -6,6 +6,8 @@ import {
 } from "@/lib/api";
 import { Timeline } from "@/components/SplitTimeline";
 
+export const revalidate = 60;
+
 export default async function CompareRoute() {
   const timeline = await requestTimeline();
   const platforms = await requestPlatforms();
@@ -13,10 +15,7 @@ export default async function CompareRoute() {
   const { lastUpdated } = await requestLastUpdated();
 
   return (
-    <div
-      id="timelines"
-      className="h-full w-full flex-grow overflow-x-auto lg:relative lg:overflow-auto"
-    >
+    <div className="h-full flex-grow overflow-x-scroll md:overflow-auto">
       <Timeline
         timeline={timeline}
         platforms={platforms}

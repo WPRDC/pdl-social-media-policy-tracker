@@ -71,7 +71,7 @@ export function Timeline({
   }, [showEmpty, _timeline]);
 
   return (
-    <div className="mx-auto w-full max-w-screen-xl px-1 lg:flex lg:flex-row-reverse lg:justify-between">
+    <div className="mx-auto w-full max-w-screen-xl bg-green-400 px-1 lg:flex lg:flex-row-reverse lg:justify-between">
       {/* Floating Menu */}
       <DialogTrigger>
         <Button
@@ -145,7 +145,7 @@ export function Timeline({
           "hidden h-fit max-h-full rounded-md border-2 border-black/70 bg-white p-2 shadow-md lg:sticky lg:top-5 lg:mt-5 lg:block",
         )}
       >
-        <section id="#timeline-menu" aria-label="filtere controls">
+        <section id="timeline-menu" aria-label="timeline filter controls">
           <FilterControl
             label="Toggle Platforms"
             selected={selectedPlatforms}

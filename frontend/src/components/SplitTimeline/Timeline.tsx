@@ -89,7 +89,7 @@ export function Timeline({
 
   return (
     <div className="w-fit lg:mx-auto">
-      <div className="flex w-screen items-start justify-between pl-1 pr-1 pt-4 md:px-0 lg:block lg:w-auto">
+      <div className="flex items-start justify-between pl-1 pr-1 pt-4 md:px-0 lg:block lg:w-auto">
         <h2 className="mb-1 flex items-center font-mono text-xs font-black uppercase text-zinc-500 lg:text-sm">
           <TbGitCommit className="size-4 lg:size-5" aria-hidden />
           <div>Comparison Timeline</div>
