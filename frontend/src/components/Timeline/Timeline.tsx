@@ -71,7 +71,7 @@ export function Timeline({
   }, [showEmpty, _timeline]);
 
   return (
-    <div className="mx-auto w-full max-w-screen-xl bg-green-400 px-1 lg:flex lg:flex-row-reverse lg:justify-between">
+    <div className="mx-auto w-full max-w-screen-xl px-1 lg:flex lg:flex-row-reverse lg:justify-between">
       {/* Floating Menu */}
       <DialogTrigger>
         <Button
