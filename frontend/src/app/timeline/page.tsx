@@ -6,7 +6,7 @@ import {
 } from "@/lib/api";
 import { Timeline } from "@/components/Timeline";
 
-export const revalidate = 60;
+export const revalidate = 600;
 
 export default async function TimelineRoute() {
   const timeline = await requestTimeline();

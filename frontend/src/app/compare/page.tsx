@@ -6,7 +6,7 @@ import {
 } from "@/lib/api";
 import { Timeline } from "@/components/SplitTimeline";
 
-export const revalidate = 60;
+export const revalidate = 600;
 
 export default async function CompareRoute() {
   const timeline = await requestTimeline();
