@@ -151,7 +151,7 @@ export default async function About() {
                 >
                   users
                 </a>{" "}
-                to address these issues. Companies responded with efforts to
+                to address these issues. Companies responded with efforts to{" "}
                 <a
                   href="https://journals.sagepub.com/doi/full/10.1177/1461444821989352"
                   target="_blank"
@@ -163,17 +163,26 @@ export default async function About() {
                 documented in this Tracker.
               </p>
               <p className={paragraphStyle}>
-                Despite the changes, social media platforms were hotbeds of
-                <a href="" target="_blank">
+                Despite the changes, social media platforms were hotbeds of{" "}
+                <a
+                  href="https://www.nytimes.com/2021/01/06/us/politics/protesters-storm-capitol-hill-building.html"
+                  target="_blank"
+                >
                   false information
                 </a>{" "}
                 regarding the 2020 elections, including the{" "}
-                <a href="" target="_blank">
+                <a
+                  href="https://slate.com/technology/2020/11/how-stop-the-steal-exploded-on-facebook-and-twitter.html"
+                  target="_blank"
+                >
                   “Stop the Steal”
                 </a>{" "}
                 conspiracy theories of voter fraud. Such discord spilled into
                 real-life violence on January 6, 2021, during the{" "}
-                <a href="" target="_blank">
+                <a
+                  href="https://en.wikipedia.org/wiki/January_6_United_States_Capitol_attack"
+                  target="_blank"
+                >
                   U.S. Capitol riots
                 </a>
                 . Some platforms decided to limit content in the immediate
@@ -183,7 +192,7 @@ export default async function About() {
                 Social media platforms have faced a backlash for their
                 decisions, caught between accusations of censorship,{" "}
                 <a
-                  href="https://www.theguardian.com/media/2023/dec/07/2024-elections-social-media-content-safety-policies-moderation"
+                  href="https://www.washingtonpost.com/technology/2019/04/10/facebook-google-twitter-under-fire-senate-republicans-censoring-conservatives-online/"
                   target="_blank"
                 >
                   bias
@@ -198,7 +207,7 @@ export default async function About() {
                 </a>{" "}
                 from earlier useful—if imperfect—
                 <a
-                  href="https://www.theguardian.com/media/2023/dec/07/2024-elections-social-media-content-safety-policies-moderation"
+                  href="https://www.washingtonpost.com/technology/2023/08/25/political-conspiracies-facebook-youtube-elon-musk/"
                   target="_blank"
                 >
                   efforts
@@ -224,13 +233,16 @@ export default async function About() {
                 policies are US-focused, many reflect broader platform
                 strategies with global implications—especially important in a
                 year when nearly{" "}
-                <a href="https://time.com/6550920/world-elections-2024/">
-                  half the world&apos;s
+                <a
+                  href="https://time.com/6550920/world-elections-2024//"
+                  target="_blank"
+                >
+                  half the world&apos;s nations
                 </a>{" "}
-                nations will hold national elections. We created the Tracker to
-                support those interested in understanding information
-                landscapes, elections, and the complex relationship between
-                technology companies, platforms, and democratic processes.
+                will hold national elections. We created the Tracker to support
+                those interested in understanding information landscapes,
+                elections, and the complex relationship between technology
+                companies, platforms, and democratic processes.
               </p>
             </div>
 
@@ -263,7 +275,10 @@ export default async function About() {
                 <li className={orderedListItemStyle}>
                   <strong>Number of Users:</strong> YouTube and Facebook are the
                   most{" "}
-                  <a href="" target="_blank">
+                  <a
+                    href="https://www.pewresearch.org/internet/fact-sheet/social-media/"
+                    target="_blank"
+                  >
                     widely used
                   </a>{" "}
                   online platforms, followed by Instagram. We group these by
@@ -333,7 +348,10 @@ export default async function About() {
                 <li className={listItemStyle}>
                   <p>
                     <strong>
-                      <a href="/timeline">Full timeline</a>:
+                      <a href="/social-media-election-policies/timeline">
+                        Full timeline
+                      </a>
+                      :
                     </strong>{" "}
                     This view will show all selected categories on a single
                     timeline. Here, you can filter by platform, as well as by
@@ -387,7 +405,10 @@ export default async function About() {
                 </li>
                 <li className={listItemStyle}>
                   <strong>
-                    <a href="/compare">Comparison timeline</a>:
+                    <a href="/social-media-election-policies/compare">
+                      Comparison timeline
+                    </a>
+                    :
                   </strong>{" "}
                   Here you can view side by side comparisons of up to three
                   platforms. To change the platforms, click the down arrow next
@@ -399,12 +420,15 @@ export default async function About() {
             </div>
 
             <div className={sectionStyle}>
-              <h2 className={headingStyle} id="limitations_and_implications">
-                Limitations and Implications
-              </h2>
-              <p className={subtitleStyle}>
-                What Else Should I Consider When Using the Tracker?
-              </p>
+              <hgroup>
+                <h2 className={headingStyle} id="limitations_and_implications">
+                  Limitations and Implications
+                </h2>
+                <p className={subtitleStyle}>
+                  What Else Should I Consider When Using the Tracker?
+                </p>
+              </hgroup>
+
               <p className={paragraphStyle}>
                 We faced many constraints when compiling the data displayed in
                 this tracker including limitations on finding information,
