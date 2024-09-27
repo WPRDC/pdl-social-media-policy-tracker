@@ -3,7 +3,7 @@
 import { TrackerRecord } from "@/types/model";
 import React, { ReactElement } from "react";
 import { Heading } from "./Heading";
-import { GiEvilBook } from "react-icons/gi";
+import { LiaComments } from "react-icons/lia";
 import {
   SiDiscourse,
   SiMeta,
@@ -17,7 +17,7 @@ import {
 import { IconType } from "react-icons/lib";
 import { Button, Dialog, DialogTrigger, Modal } from "react-aria-components";
 import { ParsedHTML } from "@/components/ParsedHTML";
-import { BiChevronDown, BiChevronUp, BiX } from "react-icons/bi";
+import { BiX } from "react-icons/bi";
 import Link from "next/link";
 import { TbExternalLink } from "react-icons/tb";
 
@@ -140,10 +140,10 @@ function getIcon(platform: string): IconType {
     youtube: SiYoutube,
     telegram: SiTelegram,
     whatsapp: SiWhatsapp,
-    gab: GiEvilBook,
-    parler: GiEvilBook,
+    gab: LiaComments,
+    parler: LiaComments,
     discourse: SiDiscourse,
-    default: GiEvilBook,
+    default: LiaComments,
   };
   const Icon = iconMap[platform.toLowerCase()];
 

@@ -49,7 +49,7 @@ export function FilterControl({
       <Button
         isDisabled={Array.from(selected).length === collection.length}
         onPress={handleSwitchAll(true)}
-        className="ml-1 rounded-sm border-2 border-black bg-green-50 px-1 py-0.5 font-mono text-xs font-semibold uppercase outline-none hover:shadow-sm focus-visible:border-2 focus-visible:border-pink-500 focus-visible:shadow-sm disabled:hover:shadow-none"
+        className="ml-1 rounded-sm border-2 border-black px-1 py-0.5 font-mono text-xs font-semibold uppercase outline-none hover:shadow-sm focus-visible:border-2 focus-visible:border-pink-500 focus-visible:shadow-sm disabled:hover:shadow-none"
       >
         Toggle All On
       </Button>
