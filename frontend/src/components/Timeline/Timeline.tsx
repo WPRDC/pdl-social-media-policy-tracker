@@ -8,7 +8,7 @@ import {
   TrackerRecord,
 } from "@/types/model";
 import { TimelineItem } from "@/components/Timeline/TimelineItem";
-import React, { useMemo, useRef, useState } from "react";
+import React, { useMemo, useState } from "react";
 
 import { Set } from "immutable";
 import { Switch } from "../Switch";

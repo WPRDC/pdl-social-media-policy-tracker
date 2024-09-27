@@ -1,5 +1,4 @@
 import { tw } from "@/lib/util";
-import Image from "next/image";
 import React from "react";
 import { requestLastUpdated } from "@/lib/api";
 
@@ -14,8 +13,6 @@ export default async function About() {
   const tocLinkStyle = tw``;
 
   const subtitleStyle = tw`my-2 w-fit rounded pb-2 text-xl font-bold italic  text-royal lg:text-2xl`;
-
-  const { lastUpdated } = await requestLastUpdated();
 
   return (
     <div className="h-full w-full flex-grow overflow-auto px-3 pb-20 lg:relative">

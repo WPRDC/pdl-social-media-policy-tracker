@@ -31,14 +31,13 @@ export function Timeline({
   lastUpdated,
 }: TimelineProps) {
   const [timelinePlatforms, setTimelinePlatforms] = useState<Platform[]>([
+    platforms[4],
     platforms[0],
-    platforms[2],
   ]);
 
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
     Set(categories.map((c) => c.slug)),
   );
-  const [showEmpty, setShowEmpty] = useState<boolean>(false);
 
   function getPlatformBySlug(slug: string) {
     return platforms.find((p) => p.slug === slug);
