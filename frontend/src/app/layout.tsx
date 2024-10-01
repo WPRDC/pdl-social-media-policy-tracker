@@ -50,7 +50,7 @@ export default function RootLayout({
         {children}
         <footer className="hidden items-center justify-between border-t bg-white px-2 pb-1 pt-0.5 text-xs leading-none lg:flex ">
           <address className="">
-            Built by{" "}
+            Webapp built by{" "}
             <a
               className="font-bold text-stone-800 no-underline"
               target="_blank"
