@@ -6,6 +6,7 @@ import { Heading } from "./Heading";
 import { LiaComments } from "react-icons/lia";
 import {
   SiDiscourse,
+  SiDiscord,
   SiMeta,
   SiTelegram,
   SiThreads,
@@ -143,6 +144,7 @@ function getIcon(platform: string): IconType {
     gab: LiaComments,
     parler: LiaComments,
     discourse: SiDiscourse,
+    discord: SiDiscord,
     default: LiaComments,
   };
   const Icon = iconMap[platform.toLowerCase()];
