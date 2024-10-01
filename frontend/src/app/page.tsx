@@ -504,7 +504,7 @@ export default async function About() {
             </div>
             <footer className="hidden pt-2 text-sm lg:block">
               <address className="block pb-2">
-                Built by{" "}
+                Webapp built by{" "}
                 <a
                   className="font-bold text-stone-800"
                   target="_blank"
