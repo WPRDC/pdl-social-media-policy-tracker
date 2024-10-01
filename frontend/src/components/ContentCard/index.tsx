@@ -36,7 +36,7 @@ export function ContentCard({ record, split }: ContentCardProps): ReactElement {
   });
 
   return (
-    <div className="relative mt-3 w-full">
+    <div className="relative mt-3 w-full min-w-64 md:min-w-0">
       {!split && (
         <div className="absolute -left-11 top-0 flex h-full items-center md:-left-12">
           <div className="flex size-8 items-center justify-center rounded-full border-2 border-slate-600 bg-white">

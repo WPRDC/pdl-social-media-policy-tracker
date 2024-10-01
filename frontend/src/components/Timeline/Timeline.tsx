@@ -76,7 +76,7 @@ export function Timeline({
       <DialogTrigger>
         <Button
           aria-label="Show timeline settings menu"
-          className="fixed bottom-5 right-5 z-50 flex items-center rounded-sm border-2 border-stone-800 bg-cyan-200 py-1 pl-1.5 pr-2 font-mono text-sm font-semibold uppercase shadow lg:hidden"
+          className="fixed bottom-5 right-5 z-50 flex items-center rounded-sm border-2 border-stone-800 bg-cyan-200 py-1 pl-1.5 pr-2 font-mono text-sm font-semibold uppercase shadow md:bottom-7 lg:bottom-5 lg:hidden"
         >
           <IoFilter className="mr-1 size-4 text-zinc-800" />
           <div>Filter</div>

@@ -58,7 +58,7 @@ export function Select<T extends object>(props: AriaSelectProps<T>) {
       >
         <span
           {...valueProps}
-          className="truncate font-display text-base font-bold sm:max-w-24 lg:max-w-none lg:text-2xl xl:text-3xl"
+          className="truncate font-display text-base font-bold sm:max-w-24 md:max-w-48 lg:max-w-none lg:text-2xl xl:text-3xl"
         >
           {state.selectedItem
             ? state.selectedItem.rendered

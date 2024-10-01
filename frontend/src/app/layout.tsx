@@ -2,16 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 
-import {
-  Fira_Code,
-  Fira_Mono,
-  Inconsolata,
-  JetBrains_Mono,
-  Noto_Sans,
-  Oswald,
-  Source_Code_Pro,
-  Space_Mono,
-} from "next/font/google";
+import { Noto_Sans, Oswald, Source_Code_Pro } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Social Media Election Policies Tracker - Pitt Cyber ",
@@ -48,7 +39,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        <footer className="hidden items-center justify-between border-t bg-white px-2 pb-1 pt-0.5 text-xs leading-none lg:flex ">
+        <footer className="hidden items-center justify-between border-t bg-white px-2 pb-1 pt-0.5 text-xs leading-none md:flex ">
           <address className="">
             Webapp built by{" "}
             <a
