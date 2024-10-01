@@ -502,7 +502,7 @@ export default async function About() {
                 <a href="mailto:cyber@pitt.edu">cyber@pitt.edu</a>.
               </p>
             </div>
-            <footer className="hidden:flex block pt-2 text-sm">
+            <footer className="hidden pt-2 text-sm lg:block">
               <address className="block pb-2">
                 Built by{" "}
                 <a
