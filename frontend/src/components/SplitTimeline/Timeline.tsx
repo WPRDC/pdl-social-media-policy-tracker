@@ -88,21 +88,25 @@ export function Timeline({
 
   return (
     <div className="w-fit lg:mx-auto">
-      <div className="flex items-start justify-between pl-1 pr-1 pt-4 md:px-0 lg:block lg:w-auto">
-        <h2 className="mb-1 flex items-center font-mono text-xs font-black uppercase text-zinc-500 lg:text-sm">
+      <div className="flex items-start justify-between pt-4 font-mono text-xs font-black uppercase text-stone-800 md:block lg:text-sm">
+        <h2 className="mb-1 flex items-center">
           <TbGitCommit className="size-4 lg:size-5" aria-hidden />
           <div>Comparison Timeline</div>
         </h2>
-        <div className="mb-5 pl-4 text-xs lg:pl-5">
-          <span className="inline-block pr-1 font-mono font-bold uppercase text-zinc-500">
-            Last Updated:
-          </span>
-          <time
-            dateTime={lastUpdated}
-            className="inline font-mono font-medium text-zinc-500"
-          >
-            {new Date(lastUpdated).toLocaleDateString("en-US", {})}
-          </time>
+        <div>
+          <div className="pl-4  text-xs font-bold lg:pl-5">Updated Monthly</div>
+
+          <div className="mb-5 pl-4 text-xs lg:pl-5">
+            <span className="inline-block pr-1 font-mono font-bold uppercase">
+              Last Updated:
+            </span>
+            <time
+              dateTime={new Date(lastUpdated).toISOString()}
+              className="inline font-mono font-medium"
+            >
+              {new Date(lastUpdated).toLocaleDateString("en-US", {})}
+            </time>
+          </div>
         </div>
       </div>
 
@@ -111,7 +115,7 @@ export function Timeline({
           aria-label="Show timeline settings menu"
           className="fixed bottom-5 right-5 z-50 flex items-center rounded-sm border-2 border-stone-800 bg-cyan-200 py-1 pl-1.5 pr-2 font-mono text-sm font-semibold uppercase shadow"
         >
-          <IoFilter className="mr-1 size-4 text-zinc-800" />
+          <IoFilter className="mr-1 size-4" />
           <div>Filter</div>
         </Button>
         <Modal isDismissable className="px-8 py-16">

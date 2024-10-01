@@ -186,21 +186,26 @@ export function Timeline({
       </div>
       {/* Timeline */}
       <main className="pb-12 pt-4 lg:mx-4 xl:max-w-screen-lg" id="timeline">
-        <div className="flex items-start justify-between md:block">
-          <h2 className="mb-1 flex items-center font-mono text-xs font-black uppercase text-zinc-500 lg:text-sm">
+        <div className="flex items-start justify-between font-mono text-xs font-black uppercase text-stone-800 md:block lg:text-sm">
+          <h2 className="mb-1 flex items-center">
             <TbGitCommit className="size-4 lg:size-5" aria-hidden />
             <div>Full Timeline</div>
           </h2>
-          <div className="mb-5 pl-4 text-xs lg:pl-5">
-            <span className="inline-block pr-1 font-mono font-bold uppercase text-zinc-500">
-              Last Updated:
-            </span>
-            <time
-              dateTime={lastUpdated}
-              className="inline font-mono font-medium text-zinc-500"
-            >
-              {new Date(lastUpdated).toLocaleDateString("en-US", {})}
-            </time>
+          <div>
+            <div className="pl-4  text-xs font-bold lg:pl-5">
+              Updated Monthly
+            </div>
+            <div className="mb-5 pl-4 text-xs lg:pl-5">
+              <span className="inline-block pr-1 font-mono font-bold uppercase text-stone-800">
+                Last Updated:
+              </span>
+              <time
+                dateTime={new Date(lastUpdated).toISOString()}
+                className="inline font-mono font-medium text-stone-800"
+              >
+                {new Date(lastUpdated).toLocaleDateString("en-US", {})}
+              </time>
+            </div>
           </div>
         </div>
         <TimelineItem position="start" />

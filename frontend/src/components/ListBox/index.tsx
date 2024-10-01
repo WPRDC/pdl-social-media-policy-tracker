@@ -82,7 +82,7 @@ function Option({ item, state }: OptionProps) {
     ref,
   );
 
-  let text = "text-stone-700";
+  let text = "text-stone-800";
   if (isFocused || isSelected) {
     text = "text-stone-900 font-semibold";
   } else if (isDisabled) {

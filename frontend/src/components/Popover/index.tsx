@@ -28,7 +28,7 @@ export function Popover(props: PopoverProps) {
       <div
         {...popoverProps}
         ref={popoverRef}
-        className={`z-20 mt-2 rounded-sm border border-stone-700 bg-white shadow-sm ${className}`}
+        className={`border-stone800 z-20 mt-2 rounded-sm border bg-white shadow-sm ${className}`}
       >
         {!isNonModal && <DismissButton onDismiss={state.close} />}
         {children}

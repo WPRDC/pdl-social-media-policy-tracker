@@ -1,6 +1,7 @@
 import { tw } from "@/lib/util";
 import React from "react";
 import { requestLastUpdated } from "@/lib/api";
+import { LuConstruction } from "react-icons/lu";
 
 export default async function About() {
   const sectionStyle = tw`pt-6 first:pt-0`;
@@ -13,14 +14,30 @@ export default async function About() {
   const tocLinkStyle = tw``;
 
   const subtitleStyle = tw`my-2 w-fit rounded pb-2 text-xl font-bold italic  text-royal lg:text-2xl`;
+  const { lastUpdated } = await requestLastUpdated();
 
   return (
     <div className="h-full w-full flex-grow overflow-auto px-3 pb-20 lg:relative">
       <div className="mx-auto max-w-screen-lg font-medium">
         <div className="lg:flex lg:flex-row-reverse">
           <div className="top-8  mb-8 h-fit border-black pt-2 text-sm lg:sticky lg:mb-0 lg:w-1/4 lg:rounded-md lg:border lg:bg-white lg:p-4 lg:shadow-md">
+            <div className="flex w-full items-center text-xs font-bold uppercase text-stone-800">
+              <LuConstruction className="mr-1 size-3" />
+              <div>Updated Monthly</div>{" "}
+            </div>
+            <div className="mb-3 text-xs">
+              <span className="inline-block pr-1 font-mono font-bold uppercase text-stone-800">
+                Last Updated:
+              </span>
+              <time
+                dateTime={new Date(lastUpdated).toISOString()}
+                className="inline font-mono font-medium text-stone-800"
+              >
+                {new Date(lastUpdated).toLocaleDateString("en-US", {})}
+              </time>
+            </div>
             <nav>
-              <h2 className="mb-1 font-mono text-xs font-bold uppercase text-stone-700">
+              <h2 className="mb-1 font-mono text-xs font-bold uppercase text-stone-800">
                 On this page
               </h2>
               <ol className="mt-2 pl-2">
@@ -71,7 +88,7 @@ export default async function About() {
               <p className={paragraphStyle}>
                 The Social Media Election Policy Tracker is a tool created to
                 broadly chronicle a timeline of selected social media companies’
-                evolving policies which have an impacted the information
+                evolving policies which have impacted the information
                 environment related to U.S. elections and campaigns from 2016 –
                 the present.
               </p>
@@ -475,7 +492,9 @@ export default async function About() {
                 election-relevant content and integrity.{" "}
               </p>
               <p className={paragraphStyle}>
-                We intend to continue to update this tracker monthly.{" "}
+                This tracker is still in development as we continue to research
+                and add social media election policy records. We intend to
+                continue to update this tracker monthly.
               </p>
               <p className={paragraphStyle + " font-bold"}>
                 <span className="block">Questions or things we’ve missed?</span>
@@ -483,6 +502,34 @@ export default async function About() {
                 <a href="mailto:cyber@pitt.edu">cyber@pitt.edu</a>.
               </p>
             </div>
+            <footer className="hidden:flex block pt-2 text-sm">
+              <address className="block pb-2">
+                Built by{" "}
+                <a
+                  className="font-bold text-stone-800"
+                  target="_blank"
+                  href="mailto:steven.saylor@pitt.edu"
+                >
+                  Steve Saylor
+                </a>{" "}
+                at the{" "}
+                <a
+                  className="text-stone-800 "
+                  target="_blank"
+                  href="https://ucsur.pitt.edu/"
+                >
+                  University of Pittsburgh Center for Social and Urban Research
+                </a>
+              </address>
+
+              <a
+                className="text-stone-800"
+                target="_blank"
+                href="https://github.com/WPRDC/pdl-social-media-policy-tracker"
+              >
+                See Source Code
+              </a>
+            </footer>
           </main>
         </div>
       </div>

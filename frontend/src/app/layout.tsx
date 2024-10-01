@@ -48,6 +48,34 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <footer className="hidden items-center justify-between border-t bg-white px-2 pb-1 pt-0.5 text-xs leading-none lg:flex ">
+          <address className="">
+            Built by{" "}
+            <a
+              className="font-bold text-stone-800 no-underline"
+              target="_blank"
+              href="mailto:steven.saylor@pitt.edu"
+            >
+              Steve Saylor
+            </a>{" "}
+            at the{" "}
+            <a
+              className="text-stone-800 no-underline "
+              target="_blank"
+              href="https://ucsur.pitt.edu/"
+            >
+              University of Pittsburgh Center for Social and Urban Research
+            </a>
+          </address>
+
+          <a
+            className="text-stone-800 no-underline"
+            target="_blank"
+            href="https://github.com/WPRDC/pdl-social-media-policy-tracker"
+          >
+            See Source Code
+          </a>
+        </footer>
       </body>
     </html>
   );
